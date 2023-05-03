@@ -1,3 +1,39 @@
 .description {
-
+margin: 0 auto;
+margin-top: 50px;
+padding: 0 24px;
+max-width: 72vw;
 }
+
+.description__header_block{
+    margin: 0;
+    padding: 0 24px;
+    margin-bottom: 72px;
+    text-align: center;
+}
+
+.description__header{
+    margin: 0;
+    padding: 0;
+    font-size: 58px;
+    line-height: 100%;
+    color: #fff;
+}
+
+.description__header:hover{
+    transform: scale(1.1);
+}
+
+.description__text_container{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 -15px;
+    margin-bottom: 48px;
+}
+
+.description__text_block{
+    margin: 0;
+    padding: 0 15px;
+}
+
+
