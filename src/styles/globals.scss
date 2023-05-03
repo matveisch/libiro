@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  outline: none;
 }
 
 body {
@@ -45,6 +46,11 @@ p {
 button {
   border: unset;
   cursor: pointer;
+}
+
+input {
+  background-color: unset;
+  border: unset;
 }
 
 .link {
