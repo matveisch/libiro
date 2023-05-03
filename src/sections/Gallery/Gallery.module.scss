@@ -1,3 +1,141 @@
+@import '../../styles/variables.scss';
 .gallery {
+  position: relative;
+  padding-bottom: 190px;
+  padding-top: 40px;
+  .radish {
+    position: absolute;
+    left: 5%;
+    bottom: 50%;
+    z-index: 3;
+  }
+  .swiperWrapper {
+    width: 904px;
+    height: 650px;
+    margin: 0 auto;
+    position: relative;
+    div {
+      height: 100%;
+    }
 
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+    .buttonPrev {
+      width: 70px;
+      height: 35px;
+      margin: 0;
+      padding: 8px;
+      position: absolute;
+      top: 50%;
+      z-index: 10;
+      left: -70px;
+      cursor: pointer;
+      svg {
+        rotate: (180deg);
+      }
+    }
+    .buttonNext {
+      width: 70px;
+      height: 35px;
+      margin: 0;
+      padding: 8px;
+      position: absolute;
+      top: 50%;
+      right: -70px;
+      left: auto;
+      cursor: pointer;
+      z-index: 10;
+    }
+  }
+
+  .bgImage1,
+  .bgImage2,
+  .bgImage3,
+  .bgImage4,
+  .bgImage5 {
+    position: absolute;
+    z-index: 0;
+    background-color: $backgroundColor;
+    transform-style: preserve-3d;
+    img {
+      opacity: 0.2;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .bgImage1 {
+    left: 40px;
+    top: 40px;
+    width: 335px;
+  }
+  .bgImage2 {
+    right: 128px;
+    top: 0;
+    width: 252px;
+  }
+  .bgImage3 {
+    left: 128px;
+    bottom: 0;
+    width: 180px;
+  }
+  .bgImage4 {
+    right: 24%;
+    bottom: 0;
+    width: 390px;
+  }
+  .bgImage5 {
+    right: 40px;
+    top: 50%;
+    width: 220px;
+  }
+  &::before {
+    content: '';
+    width: 55%;
+    height: 264px;
+    background-image: url('../../../public/lines.png');
+    background-position: center;
+    background-repeat: repeat;
+    position: absolute;
+    right: 0;
+    bottom: -64px;
+    z-index: -1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .bgImage1,
+  .bgImage2,
+  .bgImage3,
+  .bgImage4,
+  .bgImage5 {
+    display: none;
+  }
+  .gallery {
+    .swiperWrapper {
+      width: 600px;
+      height: 650px;
+    }
+    &::before {
+      display: none;
+    }
+  }
+}
+@media (max-width: 990px) {
+  .gallery {
+    .swiperWrapper {
+      width: 400px;
+      height: 450px;
+    }
+  }
+}
+@media (max-width: 575px) {
+  .gallery {
+    .swiperWrapper {
+      width: calc(100vw - 156px);
+      height: 450px;
+    }
+  }
 }
