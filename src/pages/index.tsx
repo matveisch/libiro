@@ -25,14 +25,11 @@ export default function Home() {
     }
   }
 
-  console.log(process.env.ACCESS_TOKEN);
-  console.log(process.env.PHONE_NUMBER_ID);
-
   return (
     <>
       <Head>
-        <title>Libiro</title>
-        <meta name="description" content="Libiro restaurant website" />
+        <title>Libira</title>
+        <meta name="description" content="Libira restaurant website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
