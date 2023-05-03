@@ -1,6 +1,8 @@
 .contact {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   .frame {
     max-width: 640px;
@@ -9,6 +11,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &::before {
+      content: "";
+      width: 2px;
+      height: 80px;
+      background-color: #fff;
+      position: absolute;
+      left: 50%;
+      margin-left: -1px;
+      top: -40px;
+      z-index: 4;
+    }
 
     .frameBackground {
       background-color: $backgroundColor;
@@ -24,7 +38,58 @@
         text-align: center;
         padding-left: 24px;
         padding-right: 24px;
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
+    }
+  }
+
+  .buttonWrapper {
+    margin-top: -40px;
+    position: relative;
+
+    button {
+      min-width: 192px;
+      height: 50px;
+      margin-bottom: 8px;
+      position: relative;
+      background-color: #B32821;
+      text-align: center;
+      z-index: 1;
+
+      &:hover {
+        text-decoration: none;
+
+        &::after {
+          right: -30px;
+        }
+      }
+
+      &::after {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background-color: #fff;
+        position: absolute;
+        right: -15px;
+        top: 50%;
+        margin-top: -1px;
+        z-index: 3;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+      }
+    }
+
+    .square {
+      min-width: 192px;
+      height: 50px;
+      border: 1px solid #fff;
+
+      position: absolute;
+      top: 8px;
+      left: 8px;
     }
   }
 }

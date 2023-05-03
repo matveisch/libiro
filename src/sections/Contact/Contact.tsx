@@ -12,6 +12,12 @@ export default function Contact() {
           <h3>Please, ask us about your next party details</h3>
         </div>
       </div>
+      <div className={styles.buttonWrapper}>
+        <button type="button" className="link">
+          pls contact us
+        </button>
+        <div className={styles.square} />
+      </div>
     </section>
   );
 }

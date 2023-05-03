@@ -12,6 +12,11 @@ const rubik = Rubik({
 const gillSans = localFont({
   src: [
     {
+      path: './fonts/GillSansWoff2/GillSansC-Bold.woff2',
+      weight: '800',
+      style: 'normal',
+    },
+    {
       path: './fonts/GillSansWoff2/GillSansC.woff2',
       weight: '400',
       style: 'normal',
