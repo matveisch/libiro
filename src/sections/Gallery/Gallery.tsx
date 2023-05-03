@@ -92,11 +92,6 @@ export default function Gallery() {
           className={styles.buttonPrev}
           onClick={() => {
             swiperRef.current?.slidePrev();
-            setRotateY(20);
-            setTimeout(() => {
-              setRotateY(0);
-              clearTimeout;
-            }, 300);
           }}
         >
           <svg
@@ -118,11 +113,6 @@ export default function Gallery() {
           className={styles.buttonNext}
           onClick={() => {
             swiperRef.current?.slideNext();
-            setRotateY(20);
-            setTimeout(() => {
-              setRotateY(0);
-              clearTimeout;
-            }, 300);
           }}
         >
           <svg
@@ -149,7 +139,13 @@ export default function Gallery() {
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
           }}
-          // onSlideChange={() => console.log('slide change')}
+          onSlideChange={() => {
+            setRotateY(20);
+            setTimeout(() => {
+              setRotateY(0);
+              clearTimeout;
+            }, 300);
+          }}
           // onSwiper={(swiper) => console.log(swiper)}
         >
           <SwiperSlide>
