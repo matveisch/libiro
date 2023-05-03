@@ -17,16 +17,12 @@ export default function Contact() {
         </div>
       </div>
       <div className={styles.buttonWrapper}>
-        <button
-          type="button"
-          className="link"
-          onClick={() => setHasForm(false)}
-        >
+        <button type="button" className="link" onClick={() => setHasForm(true)}>
           pls contact us
         </button>
         <div className={styles.square} />
       </div>
-      <ContactForm />
+      {hasForm && <ContactForm setHasForm={setHasForm} />}
     </section>
   );
 }

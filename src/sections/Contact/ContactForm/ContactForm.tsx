@@ -2,6 +2,7 @@ import * as Yup from 'yup';
 import { Formik, Form, FormikHelpers, Field } from 'formik';
 import styles from './ContactForm.module.scss';
 import ErrorMessage from '@/sections/Contact/ErrorMessage/ErrorMessage';
+import { Dispatch, SetStateAction } from 'react';
 
 interface Values {
   subject: 'Event/Party' | 'Menu' | 'Beer' | 'Other' | '';
@@ -11,7 +12,11 @@ interface Values {
   message: string;
 }
 
-export default function ContactForm() {
+export default function ContactForm({
+  setHasForm,
+}: {
+  setHasForm: Dispatch<SetStateAction<boolean>>;
+}) {
   let validationShape = {
     name: Yup.string().required(
       'This field is required. Please input your name.'
@@ -43,9 +48,13 @@ export default function ContactForm() {
       {({ errors, touched }) => (
         <div className={styles.contactForm}>
           <Form>
-            <div className={styles.closeButton}>
+            <button
+              className={styles.closeButton}
+              type="button"
+              onClick={() => setHasForm(false)}
+            >
               <span>x</span>
-            </div>
+            </button>
             <div className={styles.inputsWrapper}>
               <div className={styles.singleInput}>
                 <Field
