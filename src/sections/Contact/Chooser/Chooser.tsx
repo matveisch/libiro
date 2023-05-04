@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import { FormikHelpers, useFormik } from 'formik';
 import styles from './Chooser.module.scss';
-import { Values } from '@/sections/Contact/ContactForm/ContactForm';
 
 const options = ['Event/Party', 'Menu', 'Beer', 'Other'];
 
