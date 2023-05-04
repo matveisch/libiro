@@ -58,6 +58,7 @@ export default function ContactForm({
             >
               <span>x</span>
             </button>
+            <h1 className={styles.pleaseCall}>Or pls call at 04-3740251</h1>
             <div className={styles.inputsWrapper}>
               <div className={styles.singleInput}>
                 <Chooser setFieldValue={setFieldValue} />

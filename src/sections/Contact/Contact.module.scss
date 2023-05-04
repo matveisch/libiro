@@ -32,7 +32,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 80px;
+      padding: 70px;
+
+      @media (max-width: 768px) {
+        padding: 60px 15px;
+      }
 
       h3 {
         text-align: center;
