@@ -1,0 +1,27 @@
+.chooser {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3em;
+
+  background-color: #0a0a0a;
+  width: 100%;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+
+  &:hover {
+    border-color: #17A8E3;
+  }
+
+  .active {
+    padding: 10px 8px;
+  }
+
+  .options {
+    .option {
+      padding: 10px 8px;
+    }
+  }
+}

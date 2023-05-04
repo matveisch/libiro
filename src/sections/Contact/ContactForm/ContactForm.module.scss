@@ -49,6 +49,50 @@
       }
     }
 
+    .sendButton {
+      background-color: #c39c2c;
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      min-width: 100px;
+      cursor: pointer;
+      position: relative;
+      margin: 0 10px 0 0;
+      padding: 10px;
+      border-radius: 2px;
+      line-height: 1.45em;
+      text-align: center;
+      -webkit-transition: .2s ease;
+      transition: .2s ease;
+
+      &::after {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background-color: #fff;
+        position: absolute;
+        right: -15px;
+        top: 50%;
+        margin-top: -1px;
+        z-index: 3;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        background-color: #008FCA;
+
+        &::after {
+          right: -30px;
+        }
+      }
+
+
+    }
+
     .inputsWrapper {
       display: flex;
       flex-direction: column;
@@ -61,11 +105,25 @@
       gap: 5px;
     }
 
+    .count {
+      min-width: 80px;
+      margin-left: auto;
+      text-align: right;
+      color: #ffffff;
+      font-size: 12px;
+      line-height: 1.5em;
+      font-weight: 400;
+    }
+
     input, input::-webkit-input-placeholder, textarea, textarea::-webkit-input-placeholder {
       color: #ffffff;
       font-size: 16px;
       font-weight: 400;
       line-height: 1.3em;
+
+      &:hover {
+        border-color: #17A8E3;
+      }
     }
 
     input, textarea {
