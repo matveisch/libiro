@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import Image from 'next/image';
 import styles from './Chooser.module.scss';
+import arrow from '@public/right-arrow.png';
 
 const options = ['Event/Party', 'Menu', 'Beer', 'Other'];
 
@@ -22,6 +24,12 @@ export default function Chooser({
     >
       <div className={styles.active} onClick={() => setOpen(!open)}>
         {activeSubject}
+        <Image
+          src={arrow}
+          alt="arrow"
+          className={styles.arrow}
+          style={open ? { transform: 'rotate(270deg)' } : undefined}
+        />
       </div>
       {open && (
         <div className={styles.options}>
