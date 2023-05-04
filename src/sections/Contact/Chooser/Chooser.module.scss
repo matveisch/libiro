@@ -3,6 +3,7 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 1.3em;
+  position: relative;
 
   background-color: #0a0a0a;
   width: 100%;
@@ -17,11 +18,28 @@
 
   .active {
     padding: 10px 8px;
+    cursor: pointer;
   }
 
   .options {
+    position: absolute;
+    max-height: 210px;
+    padding: 5px 0;
+    background-color: #0a0a0a;
+    border: 1px solid #17A8E3;
+    border-top: none;
+    left: -1px;
+    right: -1px;
+    z-index: 1;
+
     .option {
       padding: 10px 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #aaaaaa;
+        color: #000;
+      }
     }
   }
 }

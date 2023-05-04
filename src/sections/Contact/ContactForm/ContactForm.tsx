@@ -5,7 +5,7 @@ import ErrorMessage from '@/sections/Contact/ErrorMessage/ErrorMessage';
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
 import Chooser from '@/sections/Contact/Chooser/Chooser';
 
-interface Values {
+export interface Values {
   subject: 'Event/Party' | 'Menu' | 'Beer' | 'Other' | '';
   name: string;
   email: string;
@@ -48,7 +48,7 @@ export default function ContactForm({
         setSubmitting(false);
       }}
     >
-      {({ errors, touched }) => (
+      {({ errors, touched, setFieldValue }) => (
         <div className={styles.contactForm}>
           <Form>
             <button
@@ -60,7 +60,7 @@ export default function ContactForm({
             </button>
             <div className={styles.inputsWrapper}>
               <div className={styles.singleInput}>
-                <Chooser />
+                <Chooser setFieldValue={setFieldValue} />
                 <Field
                   name="name"
                   placeholder="Your name"
