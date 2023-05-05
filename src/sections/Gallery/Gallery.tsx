@@ -1,70 +1,84 @@
-import { useContext, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType, Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import styles from './Gallery.module.scss';
-import radish from '../../../public/radish.png';
-import image1 from '../../../public/vip-table-880_1000.jpg';
-import image2 from '../../../public/Event-gallery-1.jpg';
-import image3 from '../../../public/Beer-bar-in-private-hall.jpg';
-import image4 from '../../../public/Candelabra-in-the-Private-room.jpg';
-import image5 from '../../../public/Private-Hall-1.jpg';
+import image1 from '@public/vip-table-880_1000.jpg';
+import image2 from '@public/Event-gallery-1.jpg';
+import image3 from '@public/Beer-bar-in-private-hall.jpg';
+import image4 from '@public/Candelabra-in-the-Private-room.jpg';
+import image5 from '@public/Private-Hall-1.jpg';
 
-import bgImage1 from '../../../public/fither-img3.jpg';
-import bgImage2 from '../../../public/events-img2-mobile.jpg';
-import bgImage3 from '../../../public/fither-img5.jpg';
-import bgImage4 from '../../../public/fither-img4.jpg';
-import bgImage5 from '../../../public/rest-screen-img4.jpg';
+import bgImage1 from '@public/fither-img3.jpg';
+import bgImage2 from '@public/events-img2-mobile.jpg';
+import bgImage3 from '@public/fither-img5.jpg';
+import bgImage4 from '@public/fither-img4.jpg';
+import bgImage5 from '@public/rest-screen-img4.jpg';
 
 export default function Gallery() {
   const swiperRef = useRef<SwiperType>();
   const [rotateY, setRotateY] = useState(0);
   const bgImagesArr = [bgImage1, bgImage2, bgImage3, bgImage4, bgImage5];
+  const [screenWidth, setScreenWidth] = useState(0);
+
+  useEffect(() => {
+    function setWidth() {
+      setScreenWidth(window.innerWidth);
+    }
+    setWidth();
+
+    window.addEventListener('resize', setWidth);
+    return () => {
+      window.removeEventListener('resize', setWidth);
+    };
+  }, []);
+
   return (
     <motion.section animate="animate" className={styles.gallery}>
-      {bgImagesArr.map((item, index) => {
-        return (
-          <motion.div
-            animate={{
-              x: [
-                null,
-                Math.random() * 40 - 20,
-                Math.random() * 40 - 20,
-                Math.random() * 40 - 20,
-              ],
-              y: [
-                null,
-                Math.random() * 40 - 20,
-                Math.random() * 40 - 20,
-                Math.random() * 40 - 20,
-              ],
-              rotateY: rotateY,
-            }}
-            transition={{
-              default: {
-                duration: 8,
-                ease: 'easeInOut',
-                times: [0, 0.3, 0.7, 1],
-                repeat: Infinity,
-                repeatType: 'reverse',
-                delay: 0.2 * index,
-              },
-              rotateY: {
-                duration: 0.3,
-                // repeatType: 'reverse',
-                // repeat: 1,
-              },
-            }}
-            key={index}
-            className={styles[`bgImage${index + 1}`]}
-          >
-            <Image src={item} alt="" />
-          </motion.div>
-        );
-      })}
+      {screenWidth > 1200 &&
+        bgImagesArr.map((item, index) => {
+          return (
+            <motion.div
+              animate={{
+                x: [
+                  null,
+                  Math.random() * 40 - 20,
+                  Math.random() * 40 - 20,
+                  Math.random() * 40 - 20,
+                ],
+                y: [
+                  null,
+                  Math.random() * 40 - 20,
+                  Math.random() * 40 - 20,
+                  Math.random() * 40 - 20,
+                ],
+                rotateY: rotateY,
+              }}
+              transition={{
+                default: {
+                  duration: 8,
+                  ease: 'easeInOut',
+                  times: [0, 0.3, 0.7, 1],
+                  repeat: Infinity,
+                  repeatType: 'reverse',
+                  delay: 0.2 * index,
+                },
+                rotateY: {
+                  duration: 0.3,
+                  // repeatType: 'reverse',
+                  // repeat: 1,
+                },
+              }}
+              key={index}
+              className={styles[`bgImage${index + 1}`]}
+            >
+              <Image src={item} alt="" />
+            </motion.div>
+          );
+        })}
       {/* <div className={styles.radish}>
         <Image src={radish} alt="Radish" />
       </div> */}
