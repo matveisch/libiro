@@ -118,7 +118,7 @@ export default function Gallery() {
             <path
               d="M8.48542 0.999094L16.9707 9.48438L8.48542 17.9697"
               stroke="white"
-              stroke-width="2"
+              strokeWidth="2"
             ></path>
             <path d="M53.9707 9.48438H22.9707" stroke="white"></path>
           </svg>
@@ -139,7 +139,7 @@ export default function Gallery() {
             <path
               d="M8.48542 0.999094L16.9707 9.48438L8.48542 17.9697"
               stroke="white"
-              stroke-width="2"
+              strokeWidth="2"
             ></path>
             <path d="M53.9707 9.48438H22.9707" stroke="white"></path>
           </svg>
