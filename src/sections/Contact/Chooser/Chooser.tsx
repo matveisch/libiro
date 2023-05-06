@@ -2,8 +2,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import styles from './Chooser.module.scss';
 import arrow from '@public/right-arrow.png';
-
-const options = ['Event/Party', 'Menu', 'Beer', 'Other'];
+import { useTranslation } from 'next-i18next';
 
 export default function Chooser({
   setFieldValue,
@@ -15,7 +14,11 @@ export default function Chooser({
   ) => void;
 }) {
   const [open, setOpen] = useState(false);
-  const [activeSubject, setActiveSubject] = useState('Pls choose subject');
+  const { t } = useTranslation();
+  const [activeSubject, setActiveSubject] = useState(
+    t('chooseSubject') || 'Pls choose subject'
+  );
+  const options = [t('eventParty'), t('menu'), t('beer'), t('other')];
 
   return (
     <div
