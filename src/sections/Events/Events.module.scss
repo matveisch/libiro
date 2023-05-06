@@ -1,6 +1,5 @@
 .events {
-    height: 595px;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .events__container{
@@ -55,3 +54,22 @@
     color: white;
 }
 
+
+@media screen and (max-width: 1199px) {
+    .events__buttonFrame{
+        font-size: 54px;
+    }
+}
+
+
+@media screen and (max-width: 575px) {
+    .events__container{
+        padding: 0 16px;
+    }
+
+    .events__buttonFrame{
+        width: 100%;
+        font-size: 35px;
+    }
+
+}
