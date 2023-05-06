@@ -6,6 +6,8 @@ import Description from '@/sections/Description/Description';
 import Halls from '@/sections/Halls/Halls';
 import Gallery from '@/sections/Gallery/Gallery';
 import Contact from '@/sections/Contact/Contact';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import FuncBar from '@/components/FuncBar/FuncBar';
 
 export default function Home() {
   async function sendMessage() {
@@ -44,7 +46,16 @@ export default function Home() {
         <Halls />
         <Gallery />
         <Contact />
+        <FuncBar />
       </main>
     </>
   );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
 }
