@@ -6,6 +6,7 @@ import { Swiper as SwiperType, Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import styles from './Gallery.module.scss';
+import radish from '@public/radish.png';
 import image1 from '@public/vip-table-880_1000.jpg';
 import image2 from '@public/Event-gallery-1.jpg';
 import image3 from '@public/Beer-bar-in-private-hall.jpg';
@@ -79,28 +80,10 @@ export default function Gallery() {
             </motion.div>
           );
         })}
-      {/* <div className={styles.radish}>
+      <div className={styles.radish}>
         <Image src={radish} alt="Radish" />
-      </div> */}
-      {/* <motion.div
-        custom={[getAnim(), getAnim()]}
-        variants={bganimation}
-        className={styles.bgImage1}
-      >
-        <Image src={bgImage1} alt="" />
-      </motion.div>
-      <motion.div variants={bganimation} className={styles.bgImage2}>
-        <Image src={bgImage2} alt="" />
-      </motion.div>
-      <motion.div variants={bganimation} className={styles.bgImage3}>
-        <Image src={bgImage3} alt="" />
-      </motion.div>
-      <motion.div variants={bganimation} className={styles.bgImage4}>
-        <Image src={bgImage4} alt="" />
-      </motion.div>
-      <motion.div variants={bganimation} className={styles.bgImage5}>
-        <Image src={bgImage5} alt="" />
-      </motion.div> */}
+      </div>
+
       <div className={styles.swiperWrapper}>
         <div
           className={styles.buttonPrev}
