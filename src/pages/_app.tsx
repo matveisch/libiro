@@ -3,6 +3,7 @@ import '@styles/globals.scss';
 import type { AppProps } from 'next/app';
 import { Rubik } from 'next/font/google';
 import localFont from 'next/font/local';
+import { appWithTranslation } from 'next-i18next';
 
 const rubik = Rubik({
   subsets: ['latin', 'hebrew', 'cyrillic'],
@@ -29,7 +30,7 @@ const gillSans = localFont({
   ],
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <style jsx global>{`
@@ -41,3 +42,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
+export default appWithTranslation(App);

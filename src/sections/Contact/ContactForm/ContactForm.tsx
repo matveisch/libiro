@@ -4,9 +4,11 @@ import styles from './ContactForm.module.scss';
 import ErrorMessage from '@/sections/Contact/ErrorMessage/ErrorMessage';
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
 import Chooser from '@/sections/Contact/Chooser/Chooser';
+import { useTranslation } from 'next-i18next';
+import GeneralError from '@/sections/Contact/GeneralError/GeneralError';
 
 export interface Values {
-  subject: 'Event/Party' | 'Menu' | 'Beer' | 'Other' | '';
+  subject: string;
   name: string;
   email: string;
   phone: string;
@@ -19,16 +21,21 @@ export default function ContactForm({
   setHasForm: Dispatch<SetStateAction<boolean>>;
 }) {
   const [count, setCount] = useState(0);
+  const { t } = useTranslation();
 
   let validationShape = {
     name: Yup.string().required(
-      'This field is required. Please input your name.'
+      t('inputName') || 'This field is required. Please input your name.'
     ),
     email: Yup.string()
-      .email('Invalid email')
-      .required('This field is required. Please input a valid email.'),
+      .email(
+        t('inputEmail') || 'This field is required. Please input a valid email.'
+      )
+      .required(
+        t('inputEmail') || 'This field is required. Please input a valid email.'
+      ),
     phone: Yup.string(),
-    message: Yup.string().max(180, 'Message is too long'),
+    message: Yup.string(),
   };
 
   const contactSchema = Yup.object().shape(validationShape);
@@ -48,7 +55,7 @@ export default function ContactForm({
         setSubmitting(false);
       }}
     >
-      {({ errors, touched, setFieldValue }) => (
+      {({ errors, touched, setFieldValue, isValid, isSubmitting }) => (
         <div className={styles.contactForm}>
           <Form>
             <button
@@ -58,13 +65,15 @@ export default function ContactForm({
             >
               <span>x</span>
             </button>
-            <h1 className={styles.pleaseCall}>Or pls call at 04-3740251</h1>
+            <h1 className={styles.pleaseCall}>{t('orCall')}</h1>
+            {!isValid ||
+              (isSubmitting && <GeneralError isSubmitting={isSubmitting} />)}
             <div className={styles.inputsWrapper}>
+              <Chooser setFieldValue={setFieldValue} />
               <div className={styles.singleInput}>
-                <Chooser setFieldValue={setFieldValue} />
                 <Field
                   name="name"
-                  placeholder="Your name"
+                  placeholder={t('yourName')}
                   style={
                     errors.name && touched.name
                       ? { borderColor: '#E04562' }
@@ -78,7 +87,7 @@ export default function ContactForm({
               <div className={styles.singleInput}>
                 <Field
                   name="email"
-                  placeholder="Email Address"
+                  placeholder={t('emailAddress')}
                   style={
                     errors.email && touched.email
                       ? { borderColor: '#E04562' }
@@ -92,7 +101,7 @@ export default function ContactForm({
               <div className={styles.singleInput}>
                 <Field
                   name="phone"
-                  placeholder="Phone Number"
+                  placeholder={t('phoneNumber')}
                   style={
                     errors.phone && touched.phone
                       ? { borderColor: '#E04562' }
@@ -106,8 +115,9 @@ export default function ContactForm({
               <div className={styles.singleInput}>
                 <Field
                   name="message"
-                  placeholder="Enter your message..."
+                  placeholder={t('enterMessage')}
                   as="textarea"
+                  maxLength={180}
                   onKeyUp={(e: ChangeEvent<HTMLTextAreaElement>) =>
                     setCount(e.target.value.length)
                   }
@@ -124,7 +134,7 @@ export default function ContactForm({
               </div>
             </div>
             <button type="submit" className={styles.sendButton}>
-              Send Message
+              {t('sendMessage')}
             </button>
           </Form>
         </div>

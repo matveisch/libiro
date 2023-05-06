@@ -18,12 +18,14 @@ import bgImage2 from '@public/events-img2-mobile.jpg';
 import bgImage3 from '@public/fither-img5.jpg';
 import bgImage4 from '@public/fither-img4.jpg';
 import bgImage5 from '@public/rest-screen-img4.jpg';
+import { useRouter } from 'next/router';
 
 export default function Gallery() {
   const swiperRef = useRef<SwiperType>();
   const [rotateY, setRotateY] = useState(0);
   const bgImagesArr = [bgImage1, bgImage2, bgImage3, bgImage4, bgImage5];
   const [screenWidth, setScreenWidth] = useState(0);
+  const { locale } = useRouter();
 
   useEffect(() => {
     function setWidth() {
@@ -38,7 +40,10 @@ export default function Gallery() {
   }, []);
 
   return (
-    <motion.section animate="animate" className={styles.gallery}>
+    <motion.section
+      animate="animate"
+      className={locale === 'he' ? styles.galleryRtl : styles.gallery}
+    >
       {screenWidth > 1200 &&
         bgImagesArr.map((item, index) => {
           return (
