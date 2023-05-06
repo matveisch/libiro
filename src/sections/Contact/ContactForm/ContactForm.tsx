@@ -55,7 +55,7 @@ export default function ContactForm({
         setSubmitting(false);
       }}
     >
-      {({ errors, touched, setFieldValue, isValid }) => (
+      {({ errors, touched, setFieldValue, isValid, isSubmitting }) => (
         <div className={styles.contactForm}>
           <Form>
             <button
@@ -66,7 +66,8 @@ export default function ContactForm({
               <span>x</span>
             </button>
             <h1 className={styles.pleaseCall}>{t('orCall')}</h1>
-            {!isValid && <GeneralError />}
+            {!isValid ||
+              (isSubmitting && <GeneralError isSubmitting={isSubmitting} />)}
             <div className={styles.inputsWrapper}>
               <Chooser setFieldValue={setFieldValue} />
               <div className={styles.singleInput}>

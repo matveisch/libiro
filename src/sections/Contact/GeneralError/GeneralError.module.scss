@@ -1,4 +1,8 @@
 .generalError {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
   background-color: #F9E4E8;
   box-shadow: inset 2px 0 0 0 #E04562;
   -moz-box-shadow: inset 2px 0 0 0 #E04562;
@@ -6,13 +10,15 @@
   margin: 0 0 20px;
   padding: 15px 20px 15px 22px;
   border-radius: 2px;
-  text-align: left;
+
+  svg {
+    margin-bottom: 4px;
+  }
 
   p {
     font-size: 15px;
     font-weight: 400;
     color: #333333;
-    margin-bottom: 10px;
     line-height: 1.3em;
   }
 }

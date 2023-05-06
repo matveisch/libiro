@@ -13,6 +13,8 @@
   "other": "Other",
 
   "generalError": "Error: Your form is not valid, please fix the errors!",
+  "submitting": "Submitting...",
+
   "inputName": "This field is required. Please input your name.",
   "inputEmail": "This field is required. Please input a valid email.",
   "orCall": "Or pls call at 04-3740251",
