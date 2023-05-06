@@ -5,6 +5,7 @@ import ErrorMessage from '@/sections/Contact/ErrorMessage/ErrorMessage';
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
 import Chooser from '@/sections/Contact/Chooser/Chooser';
 import { useTranslation } from 'next-i18next';
+import GeneralError from '@/sections/Contact/GeneralError/GeneralError';
 
 export interface Values {
   subject: string;
@@ -54,7 +55,7 @@ export default function ContactForm({
         setSubmitting(false);
       }}
     >
-      {({ errors, touched, setFieldValue }) => (
+      {({ errors, touched, setFieldValue, isValid }) => (
         <div className={styles.contactForm}>
           <Form>
             <button
@@ -65,9 +66,10 @@ export default function ContactForm({
               <span>x</span>
             </button>
             <h1 className={styles.pleaseCall}>{t('orCall')}</h1>
+            {!isValid && <GeneralError />}
             <div className={styles.inputsWrapper}>
+              <Chooser setFieldValue={setFieldValue} />
               <div className={styles.singleInput}>
-                <Chooser setFieldValue={setFieldValue} />
                 <Field
                   name="name"
                   placeholder={t('yourName')}
