@@ -8,8 +8,20 @@ import Gallery from '@/sections/Gallery/Gallery';
 import Contact from '@/sections/Contact/Contact';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import FuncBar from '@/components/FuncBar/FuncBar';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 export default function Home() {
+  const { locale } = useRouter();
+
+  useEffect(() => {
+    if (locale === 'he') {
+      document.body.dir = 'rtl';
+    } else {
+      document.body.dir = 'ltr';
+    }
+  }, [locale]);
+
   async function sendMessage() {
     const url = `https://graph.facebook.com/v16.0/${process.env.PHONE_NUMBER_ID}/messages`;
     const data = {

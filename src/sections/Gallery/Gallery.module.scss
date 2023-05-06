@@ -100,9 +100,19 @@
     background-position: center;
     background-repeat: repeat;
     position: absolute;
-    right: 0;
+    right: unset;
+    left: 0;
     bottom: -64px;
     z-index: -1;
+  }
+}
+
+.galleryRtl {
+  @extend .gallery;
+
+  &::before {
+    right: 0;
+    left: unset;
   }
 }
 
