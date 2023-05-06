@@ -1,13 +1,17 @@
 @import '../../styles/variables.scss';
 .gallery {
   position: relative;
-  padding-bottom: 190px;
+  padding-bottom: 120px;
   padding-top: 40px;
   .radish {
     position: absolute;
     left: 5%;
-    bottom: 50%;
+    bottom: -70px;
     z-index: 3;
+    img {
+      height: auto;
+      width: 210px;
+    }
   }
   .swiperWrapper {
     width: 904px;
@@ -102,7 +106,7 @@
     position: absolute;
     right: unset;
     left: 0;
-    bottom: -64px;
+    bottom: 20px;
     z-index: -1;
   }
 }
@@ -125,6 +129,9 @@
     display: none;
   }
   .gallery {
+    .radish {
+      display: none;
+    }
     .swiperWrapper {
       width: 600px;
       height: 650px;
