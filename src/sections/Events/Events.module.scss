@@ -1,75 +1,72 @@
+@import '../../styles/variables.scss';
 .events {
-    height: 100vh;
+  height: 100vh;
 }
 
-.events__container{
-    background-image: url(../../../public/Фон2.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.events__container {
+  background-image: url(../../../public/Фон2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.events__buttonFrame{
-    text-align: center;
-    height: 96px;
-    padding: 0 40px;
-    font-size: 68px;
-    line-height: 100%;
-    position: relative;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+.events__buttonFrame {
+  text-align: center;
+  height: 96px;
+  padding: 0 40px;
+  font-size: 68px;
+  line-height: 100%;
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
-.events__buttonFrame svg{
-    position: absolute;
-    left: 0;
-    top: 4px;
+.events__buttonFrame svg {
+  position: absolute;
+  left: 0;
+  top: 4px;
 }
 
-.events__frameLeft, .events__frameRight{
-    stroke: white;
-    stroke-width: 2px;
-    fill: none;
+.events__frameLeft,
+.events__frameRight {
+  stroke: $fontColor;
+  stroke-width: 2px;
+  fill: none;
 
-    transform: matrix(1, 0, 0, 1, 0, 0);
+  transform: matrix(1, 0, 0, 1, 0, 0);
 }
 
-
-.events__frameLeft{
-   
+.events__frameLeft {
 }
 
-.events__frameRight{
-
+.events__frameRight {
 }
 
-.events__description{
-    padding: 1em 0;   font-size: 120%;
-    color: white;
+.events__description {
+  padding: 1em 0;
+  font-size: 120%;
+  color: white;
 }
-
 
 @media screen and (max-width: 1199px) {
-    .events__buttonFrame{
-        font-size: 54px;
-    }
+  .events__buttonFrame {
+    font-size: 54px;
+  }
 }
 
-
 @media screen and (max-width: 575px) {
-    .events__container{
-        padding: 0 16px;
-    }
+  .events__container {
+    padding: 0 16px;
+  }
 
-    .events__buttonFrame{
-        width: 100%;
-        font-size: 35px;
-    }
-
+  .events__buttonFrame {
+    width: 100%;
+    font-size: 35px;
+  }
 }
