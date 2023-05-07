@@ -1,6 +1,6 @@
 import styles from './Events.module.scss';
 import { motion } from 'framer-motion';
-
+import { useTranslation } from 'next-i18next';
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },
   visible: (i: number) => {
@@ -16,11 +16,12 @@ const draw = {
   },
 };
 export default function Events() {
+  const { t } = useTranslation();
   return (
     <section className={styles.events}>
       <div className={styles.events__container}>
         <div className={styles.events__buttonFrame}>
-          <span>Events</span>
+          <span>{t('events')}</span>
           <motion.svg
             preserveAspectRatio="none"
             width="100%"
@@ -36,7 +37,7 @@ export default function Events() {
               d="M179.5 100 H358V4H179.5"
               variants={draw}
               animate={{ y: 2.5 }}
-              transition={{ delay: 1.4 }}
+              transition={{ delay: 1.4, duration: 0.5 }}
               custom={0}
             ></motion.path>
             <motion.path
@@ -44,15 +45,12 @@ export default function Events() {
               d="M179.5 4 H1V100H179.5"
               variants={draw}
               animate={{ y: -2.5 }}
-              transition={{ delay: 1.4 }}
+              transition={{ delay: 1.4, duration: 0.5 }}
               custom={1}
             ></motion.path>
           </motion.svg>
         </div>
-        <div className={styles.events__description}>
-          Let us handle all the delicious details: whether your party is large
-          or small - we have got you covered!
-        </div>
+        <div className={styles.events__description}>{t('eventsDesc')}</div>
       </div>
     </section>
   );
