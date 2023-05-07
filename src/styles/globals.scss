@@ -58,6 +58,15 @@ input {
   border: unset;
 }
 
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 .link {
   padding: 0 30px;
   font-size: 9px;
@@ -66,4 +75,16 @@ input {
   color: $fontColor;
   text-transform: uppercase;
   font-weight: 800;
+}
+
+.swiper-pagination-bullet {
+  background-color: #919191 !important;
+  width: 4px !important;
+  height: 4px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #fff !important;
+  width: 4px !important;
+  height: 4px !important;
 }
