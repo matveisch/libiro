@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
-
+import { useEffect, useState } from 'react';
 import styles from './Header.module.scss';
 import Image from 'next/image';
 import logo from '@public/logo.png';
 import MobileMenu from '../Mobile Menu/MobileMenu';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
+
 export default function Header() {
   const { t } = useTranslation();
   const { locale } = useRouter();
@@ -13,21 +13,30 @@ export default function Header() {
   const [screenWidth, setScreenWidth] = useState(0);
 
   useEffect(() => {
-    function setWidth() {
+    function handleResize() {
       setScreenWidth(window.innerWidth);
     }
-    setWidth();
+    handleResize();
 
-    window.addEventListener('resize', setWidth);
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener('resize', setWidth);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
+
   useEffect(() => {
-    if (screenWidth > 1200) {
-      setIsOpen(false);
-    }
+    if (screenWidth > 1200) setIsOpen(false);
   }, [screenWidth]);
+
+  useEffect(() => {
+    if (isOpen && screenWidth < 1200) {
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = 'unset';
+      };
+    }
+  }, [isOpen, screenWidth]);
+
   return (
     <header className={styles.header}>
       <div className={styles.innerWrapper}>
@@ -133,7 +142,6 @@ export default function Header() {
           )}
         </div>
       </div>
-
       <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
     </header>
   );

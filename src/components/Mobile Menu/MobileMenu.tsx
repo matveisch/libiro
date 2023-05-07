@@ -1,7 +1,4 @@
 import styles from './MobileMenu.module.scss';
-import Image from 'next/image';
-import logo from '@public/logo.png';
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
