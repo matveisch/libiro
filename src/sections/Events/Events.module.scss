@@ -60,13 +60,23 @@
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 810px) {
   .events__container {
     padding: 0 16px;
   }
 
   .events__buttonFrame {
     width: 100%;
-    font-size: 35px;
+    font-size: 6.95vw;
   }
 }
+// @media screen and (max-width: 767px) {
+//   .events__buttonFrame {
+//     font-size: 6.95vw;
+//   }
+// }
+// @media screen and (max-width: 415px) {
+//   .events__buttonFrame {
+//     font-size: 30px;
+//   }
+// }
