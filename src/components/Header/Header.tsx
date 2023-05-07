@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import styles from './Header.module.scss';
 import Image from 'next/image';
@@ -10,6 +10,24 @@ export default function Header() {
   const { t } = useTranslation();
   const { locale } = useRouter();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [screenWidth, setScreenWidth] = useState(0);
+
+  useEffect(() => {
+    function setWidth() {
+      setScreenWidth(window.innerWidth);
+    }
+    setWidth();
+
+    window.addEventListener('resize', setWidth);
+    return () => {
+      window.removeEventListener('resize', setWidth);
+    };
+  }, []);
+  useEffect(() => {
+    if (screenWidth > 1200) {
+      setIsOpen(false);
+    }
+  }, [screenWidth]);
   return (
     <header className={styles.header}>
       <div className={styles.innerWrapper}>
@@ -115,6 +133,7 @@ export default function Header() {
           )}
         </div>
       </div>
+
       <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
     </header>
   );
