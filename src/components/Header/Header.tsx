@@ -1,15 +1,42 @@
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
 import styles from './Header.module.scss';
 import Image from 'next/image';
 import logo from '@public/logo.png';
 import MobileMenu from '../Mobile Menu/MobileMenu';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
+
 export default function Header() {
   const { t } = useTranslation();
   const { locale } = useRouter();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [screenWidth, setScreenWidth] = useState(0);
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenWidth(window.innerWidth);
+    }
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (screenWidth > 1200) setIsOpen(false);
+  }, [screenWidth]);
+
+  useEffect(() => {
+    if (isOpen && screenWidth < 1200) {
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = 'unset';
+      };
+    }
+  }, [isOpen, screenWidth]);
+
   return (
     <header className={styles.header}>
       <div className={styles.innerWrapper}>

@@ -1,6 +1,4 @@
 import styles from './MobileMenu.module.scss';
-import Image from 'next/image';
-import logo from '@public/logo.png';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
@@ -12,6 +10,7 @@ interface Props {
 export default function MobileMenu({ isOpen, setIsOpen }: Props) {
   const { t } = useTranslation();
   const { locale } = useRouter();
+
   return (
     <motion.div
       animate={{ y: isOpen ? 0 : 'calc( -100% - 80px )', display: 'flex' }}
