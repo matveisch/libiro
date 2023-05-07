@@ -5,28 +5,31 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper';
+import { useTranslation } from 'next-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   const links = [
-    { title: 'Restaurant', path: 'https://libira.co.il/en/restaurant/' },
-    { title: 'Menu', path: 'https://libira.co.il/en/menu/' },
-    { title: 'Events', path: 'https://libira.co.il/en/events/' },
-    { title: 'Brewery', path: 'https://libira.co.il/en/brewery/' },
-    { title: 'Beers', path: 'https://libira.co.il/en/beers/' },
-    { title: 'Contacts', path: 'https://libira.co.il/en/contacts/' },
+    { title: t('restaurant'), path: 'https://libira.co.il/en/restaurant/' },
+    { title: t('menu'), path: 'https://libira.co.il/en/menu/' },
+    { title: t('eventsFooter'), path: 'https://libira.co.il/en/events/' },
+    { title: t('brewery'), path: 'https://libira.co.il/en/brewery/' },
+    { title: t('beers'), path: 'https://libira.co.il/en/beers/' },
+    { title: t('contacts'), path: 'https://libira.co.il/en/contacts/' },
   ];
 
   const offers = [
-    'on wedding anniversary, loyalty club members celebrate with two glasses of beer on us!',
-    'lunch deals: benefit from free starter and glass of beer with a main dish! SUN-FR 12-6 PM',
-    'SUN-MO Happy Hour: order main dish and enjoy 1+1 on beers',
-    'benefit from 10% bonus coupons',
-    'join the loyalty club: get 30 NIS on the spot!',
-    'loyalty club members benefit from 5% rebate',
-    'loyalty club members enjoy every 10th beer free',
-    'on birthday loyalty club members enjoy a dessert and  a glass of Libira!',
-    'on wedding anniversary, loyalty club members celebrate with two glasses of beer on us!',
-    'lunch deals: benefit from free starter and glass of beer with a main dish! SUN-FR 12-6 PM',
+    t('offerOne'),
+    t('offerTwo'),
+    t('offerThree'),
+    t('offerFour'),
+    t('offerFive'),
+    t('offerSix'),
+    t('offerSeven'),
+    t('offerEight'),
+    t('offerNine'),
+    t('offerTen'),
   ];
 
   return (
@@ -46,8 +49,8 @@ export default function Footer() {
             ))}
           </ul>
           <div className={styles.address}>
-            <div>address</div>
-            <a href="https://g.page/libira-haifa?share">{`Ha'Namal St 26 Haifa, Israel 3303126`}</a>
+            <div>{t('address')}</div>
+            <a href="https://g.page/libira-haifa?share">{t('haNamal')}</a>
           </div>
         </div>
         <div className={styles.offers}>
@@ -74,8 +77,8 @@ export default function Footer() {
               transform="matrix(1,0,0,1,0,0)"
             ></path>
           </svg>
-          <div className={styles.benefit}>benefit and enjoy</div>
-          <h4>from our offers</h4>
+          <div className={styles.benefit}>{t('benefit')}</div>
+          <h4>{t('offers')}</h4>
           <Swiper
             modules={[Autoplay, Pagination]}
             pagination
@@ -93,11 +96,9 @@ export default function Footer() {
         </div>
         <div className={styles.statements}>
           <div className={styles.policies}>
-            <a href="https://libira.co.il/en/privacy-policy/">
-              Privacy Statement
-            </a>
+            <a href="https://libira.co.il/en/privacy-policy/">{t('privacy')}</a>
             <a href="https://libira.co.il/en/terms-and-conditions/">
-              Terms of Use
+              {t('terms')}
             </a>
           </div>
           <div className={styles.rights}>
@@ -106,15 +107,13 @@ export default function Footer() {
         </div>
         <div className={styles.mobileBlock}>
           <div className={styles.address}>
-            <div>address</div>
-            <a href="https://g.page/libira-haifa?share">{`Ha'Namal St 26 Haifa, Israel 3303126`}</a>
+            <div>{t('address')}</div>
+            <a href="https://g.page/libira-haifa?share">{t('haNamal')}</a>
           </div>
           <div className={styles.policies}>
-            <a href="https://libira.co.il/en/privacy-policy/">
-              Privacy Statement
-            </a>
+            <a href="https://libira.co.il/en/privacy-policy/">{t('privacy')}</a>
             <a href="https://libira.co.il/en/terms-and-conditions/">
-              Terms of Use
+              {t('terms')}
             </a>
           </div>
           <div className={styles.rights}>
