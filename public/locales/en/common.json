@@ -25,5 +25,27 @@
   "sendMessage": "send message",
 
   "events": "Events",
-  "eventsDesc": "Let us handle all the delicious details: whether your party is large or small - we have got you covered!"
+  "eventsDesc": "Let us handle all the delicious details: whether your party is large or small - we have got you covered!",
+
+  "restaurant": "Restaurant",
+  "brewery": "Brewery",
+  "beers": "Beers",
+  "contacts": "Contacts",
+  "eventsFooter": "Events",
+  "offerOne": "on wedding anniversary, loyalty club members celebrate with two glasses of beer on us!",
+  "offerTwo": "lunch deals: benefit from free starter and glass of beer with a main dish! SUN-FR 12-6 PM",
+  "offerThree": "SUN-MO Happy Hour: order main dish and enjoy 1+1 on beers",
+  "offerFour": "benefit from 10% bonus coupons",
+  "offerFive": "join the loyalty club: get 30 NIS on the spot!",
+  "offerSix": "loyalty club members benefit from 5% rebate",
+  "offerSeven": "loyalty club members enjoy every 10th beer free",
+  "offerEight": "on birthday loyalty club members enjoy a dessert and  a glass of Libira!",
+  "offerNine": "on wedding anniversary, loyalty club members celebrate with two glasses of beer on us!",
+  "offerTen": "lunch deals: benefit from free starter and glass of beer with a main dish! SUN-FR 12-6 PM",
+  "address": "address",
+  "haNamal": "Ha'Namal St 26 Haifa, Israel 3303126",
+  "benefit": "benefit and enjoy",
+  "offers": "from our offers",
+  "privacy": "Privacy Statement",
+  "terms": "Terms of Use"
 }
