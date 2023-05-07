@@ -6,9 +6,11 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 export default function Footer() {
   const { t } = useTranslation();
+  const { locale } = useRouter();
 
   const links = [
     { title: t('restaurant'), path: 'https://libira.co.il/en/restaurant/' },
@@ -82,13 +84,14 @@ export default function Footer() {
           <Swiper
             modules={[Autoplay, Pagination]}
             pagination
+            initialSlide={locale === 'he' ? 9 : 0}
             slidesPerView={1}
             loop={true}
             className={styles.mySwiper}
-            autoplay={{ delay: 5000 }}
+            autoplay={{ delay: 5000, reverseDirection: locale === 'he' }}
           >
-            {offers.map((offer) => (
-              <SwiperSlide key={offer} className={styles.mySlide}>
+            {offers.map((offer, index) => (
+              <SwiperSlide key={index} className={styles.mySlide}>
                 <div>{offer}</div>
               </SwiperSlide>
             ))}
