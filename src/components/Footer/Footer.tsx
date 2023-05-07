@@ -13,12 +13,18 @@ export default function Footer() {
   const { locale } = useRouter();
 
   const links = [
-    { title: t('restaurant'), path: 'https://libira.co.il/en/restaurant/' },
-    { title: t('menu'), path: 'https://libira.co.il/en/menu/' },
-    { title: t('eventsFooter'), path: 'https://libira.co.il/en/events/' },
-    { title: t('brewery'), path: 'https://libira.co.il/en/brewery/' },
-    { title: t('beers'), path: 'https://libira.co.il/en/beers/' },
-    { title: t('contacts'), path: 'https://libira.co.il/en/contacts/' },
+    {
+      title: t('restaurant'),
+      path: `https://libira.co.il/${locale}/restaurant/`,
+    },
+    { title: t('menu'), path: `https://libira.co.il/${locale}/menu/` },
+    {
+      title: t('eventsFooter'),
+      path: `https://libira.co.il/${locale}/events/`,
+    },
+    { title: t('brewery'), path: `https://libira.co.il/${locale}/brewery/` },
+    { title: t('beers'), path: `https://libira.co.il/${locale}/beers/` },
+    { title: t('contacts'), path: `https://libira.co.il/${locale}/contacts/` },
   ];
 
   const offers = [
