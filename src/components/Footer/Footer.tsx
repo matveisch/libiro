@@ -1,6 +1,11 @@
 import styles from './Footer.module.scss';
 import Image from 'next/image';
 import logo from '@public/logo.png';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Autoplay, Pagination } from 'swiper';
+import { delay } from 'framer-motion';
 
 export default function Footer() {
   const links = [
@@ -10,6 +15,19 @@ export default function Footer() {
     { title: 'Brewery', path: 'https://libira.co.il/en/brewery/' },
     { title: 'Beers', path: 'https://libira.co.il/en/beers/' },
     { title: 'Contacts', path: 'https://libira.co.il/en/contacts/' },
+  ];
+
+  const offers = [
+    'on wedding anniversary, loyalty club members celebrate with two glasses of beer on us!',
+    'lunch deals: benefit from free starter and glass of beer with a main dish! SUN-FR 12-6 PM',
+    'SUN-MO Happy Hour: order main dish and enjoy 1+1 on beers',
+    'benefit from 10% bonus coupons',
+    'join the loyalty club: get 30 NIS on the spot!',
+    'loyalty club members benefit from 5% rebate',
+    'loyalty club members enjoy every 10th beer free',
+    'on birthday loyalty club members enjoy a dessert and  a glass of Libira!',
+    'on wedding anniversary, loyalty club members celebrate with two glasses of beer on us!',
+    'lunch deals: benefit from free starter and glass of beer with a main dish! SUN-FR 12-6 PM',
   ];
 
   return (
@@ -57,8 +75,22 @@ export default function Footer() {
               transform="matrix(1,0,0,1,0,0)"
             ></path>
           </svg>
-          <div>benefit and enjoy</div>
+          <div className={styles.benefit}>benefit and enjoy</div>
           <h4>from our offers</h4>
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            pagination
+            slidesPerView={1}
+            loop={true}
+            className={styles.mySwiper}
+            autoplay={{ delay: 5000 }}
+          >
+            {offers.map((offer) => (
+              <SwiperSlide key={offer} className={styles.mySlide}>
+                <div>{offer}</div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
         <div className={styles.statements}>
           <div className={styles.policies}>

@@ -76,3 +76,15 @@ ul {
   text-transform: uppercase;
   font-weight: 800;
 }
+
+.swiper-pagination-bullet {
+  background-color: #919191 !important;
+  width: 4px !important;
+  height: 4px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #fff !important;
+  width: 4px !important;
+  height: 4px !important;
+}
