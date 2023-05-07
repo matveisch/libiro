@@ -105,8 +105,10 @@ export default function Footer() {
         </div>
         <div className={styles.statements}>
           <div className={styles.policies}>
-            <a href="https://libira.co.il/en/privacy-policy/">{t('privacy')}</a>
-            <a href="https://libira.co.il/en/terms-and-conditions/">
+            <a href={`https://libira.co.il/${locale}/privacy-policy/`}>
+              {t('privacy')}
+            </a>
+            <a href={`https://libira.co.il/${locale}/terms-and-conditions/`}>
               {t('terms')}
             </a>
           </div>
@@ -120,8 +122,10 @@ export default function Footer() {
             <a href="https://g.page/libira-haifa?share">{t('haNamal')}</a>
           </div>
           <div className={styles.policies}>
-            <a href="https://libira.co.il/en/privacy-policy/">{t('privacy')}</a>
-            <a href="https://libira.co.il/en/terms-and-conditions/">
+            <a href={`https://libira.co.il/${locale}/privacy-policy/`}>
+              {t('privacy')}
+            </a>
+            <a href={`https://libira.co.il/${locale}/terms-and-conditions/`}>
               {t('terms')}
             </a>
           </div>
