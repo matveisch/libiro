@@ -1,3 +1,20 @@
 .halls {
+    margin: 0;
+    margin-top: 104px;
+    padding: 104px 0;
+}
 
+.halls__container{
+    display: flex;
+}
+
+.halls__types{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.halls__infoScreen{
+    opacity: 0;
+    visibility: hidden;
 }
