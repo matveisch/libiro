@@ -104,6 +104,23 @@ export default function Footer() {
             © 2019-2021 Libira. All Rights Reserved
           </div>
         </div>
+        <div className={styles.mobileBlock}>
+          <div className={styles.address}>
+            <div>address</div>
+            <a href="https://g.page/libira-haifa?share">{`Ha'Namal St 26 Haifa, Israel 3303126`}</a>
+          </div>
+          <div className={styles.policies}>
+            <a href="https://libira.co.il/en/privacy-policy/">
+              Privacy Statement
+            </a>
+            <a href="https://libira.co.il/en/terms-and-conditions/">
+              Terms of Use
+            </a>
+          </div>
+          <div className={styles.rights}>
+            © 2019-2021 Libira. All Rights Reserved
+          </div>
+        </div>
       </div>
     </footer>
   );
