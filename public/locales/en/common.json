@@ -22,5 +22,8 @@
   "emailAddress": "Email Address",
   "phoneNumber": "Phone Number",
   "enterMessage": "Enter your message...",
-  "sendMessage": "send message"
+  "sendMessage": "send message",
+
+  "events": "Events",
+  "eventsDesc": "Let us handle all the delicious details: whether your party is large or small - we have got you covered!"
 }
