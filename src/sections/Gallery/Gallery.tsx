@@ -26,7 +26,7 @@ export default function Gallery() {
   const bgImagesArr = [bgImage1, bgImage2, bgImage3, bgImage4, bgImage5];
   const [screenWidth, setScreenWidth] = useState(0);
   const { locale } = useRouter();
-
+  const [imageLoad, setImageLoad] = useState<boolean>(false);
   useEffect(() => {
     function setWidth() {
       setScreenWidth(window.innerWidth);
@@ -37,6 +37,10 @@ export default function Gallery() {
     return () => {
       window.removeEventListener('resize', setWidth);
     };
+  }, []);
+
+  useEffect(() => {
+    setImageLoad(true);
   }, []);
 
   return (
@@ -151,6 +155,41 @@ export default function Gallery() {
           // onSwiper={(swiper) => console.log(swiper)}
         >
           <SwiperSlide>
+            <Image
+              src={image1}
+              loading={imageLoad ? 'eager' : 'lazy'}
+              alt="gallery image"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src={image2}
+              loading={imageLoad ? 'eager' : 'lazy'}
+              alt="gallery image"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src={image3}
+              loading={imageLoad ? 'eager' : 'lazy'}
+              alt="gallery image"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src={image4}
+              loading={imageLoad ? 'eager' : 'lazy'}
+              alt="gallery image"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src={image5}
+              loading={imageLoad ? 'eager' : 'lazy'}
+              alt="gallery image"
+            />
+          </SwiperSlide>
+          {/* <SwiperSlide>
             <Image src={image1} loading={'eager'} alt="gallery image" />
           </SwiperSlide>
           <SwiperSlide>
@@ -164,7 +203,7 @@ export default function Gallery() {
           </SwiperSlide>
           <SwiperSlide>
             <Image src={image5} loading={'eager'} alt="gallery image" />
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
       </div>
     </motion.section>
