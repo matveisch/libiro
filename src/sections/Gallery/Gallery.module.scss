@@ -1,5 +1,6 @@
 @import '../../styles/variables.scss';
 .gallery {
+  direction: ltr !important;
   position: relative;
   padding-bottom: 120px;
   padding-top: 40px;
