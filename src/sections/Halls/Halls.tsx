@@ -71,13 +71,12 @@ export default function Halls() {
         <div className={`${styles.halls__infoScreen}`}>
           <div className={styles.halls__infoScreenWrap}>
             <div
-              className={styles.halls__infoScreenItem}
-              key={getRandomKey()}
-              style={
+              className={
                 locale === 'he'
-                  ? { paddingLeft: '296px', paddingRight: 'unset' }
-                  : undefined
+                  ? styles.halls__infoScreenItemRtl
+                  : styles.halls__infoScreenItem
               }
+              key={getRandomKey()}
             >
               <h5 className={styles.halls__number}>
                 {hallsInfo[hover].number}

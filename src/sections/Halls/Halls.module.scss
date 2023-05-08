@@ -148,6 +148,13 @@
   }
 }
 
+.halls__infoScreenItemRtl {
+  @extend .halls__infoScreenItem;
+
+  padding-left: 296px;
+  padding-right: unset;
+}
+
 .halls__number {
   margin: 0;
   padding: 0;
