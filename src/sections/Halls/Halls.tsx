@@ -3,7 +3,8 @@ import styles from './Halls.module.scss';
 import shortid from 'shortid';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-
+import Image from 'next/image';
+import radish from '@public/radish.png';
 export default function Halls() {
   const [hover, setHover] = React.useState(0);
   const { t } = useTranslation();
@@ -44,6 +45,7 @@ export default function Halls() {
 
   return (
     <section className={styles.halls}>
+      <Image className={styles.radish} src={radish} alt="radish image" />
       <div className={styles.halls__container}>
         {/* <div className={styles.halls__typesWrapper}> */}
         <div className={styles.halls__types}>
