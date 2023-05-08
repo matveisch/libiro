@@ -1,6 +1,6 @@
 export const hallsInfo = [
     {
-        index: 1,
+        index: 0,
         number: 'Hall #1',
         seating: '150 seats',
         squarage: '250 sqm',
@@ -8,7 +8,7 @@ export const hallsInfo = [
     },
 
     {
-        index: 2,
+        index: 1,
         number: 'Hall #2',
         seating: '50 seats',
         squarage: '70 sqm',
@@ -16,7 +16,7 @@ export const hallsInfo = [
     },
 
     {
-        index: 3,
+        index: 2,
         number: 'Hall #3',
         seating: '35 seats',
         squarage: '50 sqm',
