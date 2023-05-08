@@ -19,6 +19,7 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
       animate={{ y: isOpen ? 0 : 'calc( -100% - 80px )', display: 'flex' }}
       transition={{ ease: 'easeOut' }}
       className={styles.menuBg}
+      onClick={() => setIsOpen(false)}
     >
       <Langs />
       <ul className={styles.menuLinks}>
