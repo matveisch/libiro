@@ -3,10 +3,13 @@
   outline: none;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   background-color: $backgroundColor;
   color: #fff;
-  overflow-x: hidden;
 }
 
 h2 {
