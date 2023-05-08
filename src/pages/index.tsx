@@ -12,9 +12,11 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
+import { useTranslation } from 'next-i18next';
 
 export default function Home() {
   const { locale } = useRouter();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (locale === 'he') {
@@ -49,7 +51,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Libira</title>
+        <title>{t('title')}</title>
         <meta name="description" content="Libira restaurant website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
