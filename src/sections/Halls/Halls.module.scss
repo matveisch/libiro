@@ -3,7 +3,7 @@
   margin-top: 104px;
   padding: 104px 0;
   position: relative;
-
+  overflow-x: hidden;
   &::before {
     content: '';
     width: 64%;
