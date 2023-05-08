@@ -24,10 +24,6 @@ h3 {
   line-height: 100%;
   color: $fontColor;
   font-weight: 400;
-
-  @media (max-width: 767px) {
-    font-size: 32px;
-  }
 }
 
 h4 {
@@ -75,6 +71,27 @@ ul {
   color: $fontColor;
   text-transform: uppercase;
   font-weight: 800;
+}
+@media (max-width: 1359px) {
+  h2 {
+    font-size: 54px;
+  }
+}
+@media (max-width: 767px) {
+  h2 {
+    font-size: 50px;
+  }
+  h3 {
+    font-size: 32px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 575px) {
+  h2 {
+    font-size: 31px;
+  }
 }
 
 .swiper-pagination-bullet {
