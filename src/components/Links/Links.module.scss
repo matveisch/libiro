@@ -1,7 +1,7 @@
 .links {
-  a {
-    margin: 0 12px;
-  }
+  z-index: 20;
+  display: flex;
+  gap: 24px;
 
   img {
     width: 14px;
