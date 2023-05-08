@@ -17,7 +17,12 @@
     z-index: -1;
   }
 }
-
+.radish {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+}
 
 .halls__container {
   display: flex;
@@ -206,10 +211,16 @@
     justify-content: space-between;
     gap: 16px;
     padding: 32px 0;
-
+    background: none;
     width: 100%;
     flex: 0 0 100%;
     max-width: 100%;
+  }
+  .radish {
+    left: auto;
+    right: -50px;
+    max-width: 210px;
+    height: auto;
   }
   .halls__item {
     padding: 0;
