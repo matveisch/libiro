@@ -16,6 +16,7 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
 
   return (
     <motion.div
+      initial={{ y: 'calc( -100% - 80px )' }}
       animate={{ y: isOpen ? 0 : 'calc( -100% - 80px )', display: 'flex' }}
       transition={{ ease: 'easeOut' }}
       className={styles.menuBg}
