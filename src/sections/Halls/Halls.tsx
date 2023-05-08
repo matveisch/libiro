@@ -1,14 +1,46 @@
 import React from 'react';
 import styles from './Halls.module.scss';
-import { hallsInfo } from './HallsInfo';
 import shortid from 'shortid';
+import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 export default function Halls() {
   const [hover, setHover] = React.useState(0);
+  const { t } = useTranslation();
+  const { locale } = useRouter();
 
   function getRandomKey() {
     return shortid.generate();
   }
+
+  const hallsInfo = [
+    {
+      index: 0,
+      name: t('mainHall'),
+      number: `${t('hall')} #1`,
+      seating: `150 ${t('seats')}`,
+      squarage: `250 ${t('sqm')}`,
+      description: t('hallDescription'),
+    },
+
+    {
+      index: 1,
+      name: t('privateRoom'),
+      number: `${t('hall')} #2`,
+      seating: `50 ${t('seats')}`,
+      squarage: `70 ${t('sqm')}`,
+      description: t('roomDescription'),
+    },
+
+    {
+      index: 2,
+      name: t('eventsGallery'),
+      number: `${t('hall')} #3`,
+      seating: `35 ${t('seats')}`,
+      squarage: `50 ${t('sqm')}`,
+      description: t('galleryDescription'),
+    },
+  ];
 
   return (
     <section className={styles.halls}>
@@ -19,9 +51,9 @@ export default function Halls() {
             return (
               <div
                 key={`${hall.name}_${index}`}
-                className={`${styles.halls__item} ${
-                  hover === index ? styles.active : ''
-                }`}
+                className={`${
+                  locale === 'he' ? styles.halls__itemRtl : styles.halls__item
+                } ${hover === index ? styles.active : ''}`}
               >
                 <h2
                   className={`${styles.halls__itemTitle} ${
@@ -38,7 +70,15 @@ export default function Halls() {
         </div>
         <div className={`${styles.halls__infoScreen}`}>
           <div className={styles.halls__infoScreenWrap}>
-            <div className={styles.halls__infoScreenItem} key={getRandomKey()}>
+            <div
+              className={styles.halls__infoScreenItem}
+              key={getRandomKey()}
+              style={
+                locale === 'he'
+                  ? { paddingLeft: '296px', paddingRight: 'unset' }
+                  : undefined
+              }
+            >
               <h5 className={styles.halls__number}>
                 {hallsInfo[hover].number}
               </h5>
