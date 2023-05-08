@@ -50,5 +50,15 @@
   "terms": "Terms of Use",
 
   "loyaltyClub": "Loyalty club",
-  "coupons": "Coupons"
+  "coupons": "Coupons",
+
+  "mainHall": "Main restaurant hall",
+  "hallDescription": "The restaurant hall is suitable for events of up to 150 guests. The atmosphere of a brewery enhances the hospitality experience, the delightful menu, and beers produced by the brewery complete the experience and make the event special and unforgettable. You also have at your disposal a high-quality audio system, a projector, and a huge screen for projecting videos and presentations for the enjoyment of the guests.",
+  "privateRoom": "Private room",
+  "roomDescription": "This separate room is designated for private, family, and business events for small groups and parties with up to 50 people. The hall is well equipped: a high-quality sound system, an HD projector that can be connected to a laptop, and a 300*400 cm drop-down screen is visible from anywhere in the hall. The banquet hall is completely autonomous, with its own bar for pouring beer. We offer a variety of menu options that will give your guests a memorable gastronomic experience.",
+  "eventsGallery": "Events gallery",
+  "galleryDescription": "This separate room is designated for private, family, and business events for small groups and parties with up to 50 people. The hall is well equipped: a high-quality sound system, an HD projector that can be connected to a laptop, and a 300*400 cm drop-down screen is visible from anywhere in the hall. The banquet hall is completely autonomous, with its own bar for pouring beer. We offer a variety of menu options that will give your guests a memorable gastronomic experience.",
+  "hall": "Hall",
+  "seats": "seats",
+  "sqm": "sqm"
 }

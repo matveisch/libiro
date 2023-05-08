@@ -1,3 +1,243 @@
 .halls {
+  margin: 0;
+  margin-top: 104px;
+  padding: 104px 0;
+  position: relative;
 
+  &::before {
+    content: '';
+    width: 64%;
+    height: 100%;
+    background-image: url(../../../public/lines.png);
+    background-position: center;
+    background-repeat: repeat;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+}
+
+
+.halls__container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.halls__types {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 32px 0;
+  justify-content: center;
+  background-color: #000;
+  height: 100%;
+  flex: 0 0 41.666667%;
+  max-width: 41.666667%;
+}
+
+.halls__item {
+  padding-left: 38%;
+  padding-right: 112px;
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 1px);
+    transition: width 0.4s ease, transform 0.4s ease;
+    //   transform: scaleX(1.1);
+  }
+
+  &::after {
+    content: '';
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: auto;
+    right: 0;
+    width: 0;
+    transition: width 0.4s ease, transform 0.4s ease;
+  }
+}
+
+.halls__itemRtl {
+  @extend .halls__item;
+
+  padding-right: 38%;
+  padding-left: 112px;
+
+  &::before {
+    left: unset;
+    right: 0;
+  }
+
+  &::after {
+    left: 0;
+    right: auto;
+  }
+}
+
+.halls__item.active::before {
+  content: '';
+  width: 32%;
+}
+
+.halls__item.active::after {
+  width: 14%;
+}
+
+.halls__itemTitle {
+  margin: 0;
+  padding: 0;
+  opacity: 0.5;
+}
+
+.halls__itemTitle.active {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.halls__infoScreen {
+  display: flex;
+  flex-basis: 58.333%;
+  max-width: 58.333%;
+
+  margin: 0;
+  transition: visibility 0.5s linear, opacity 0.5s linear;
+}
+
+.halls__infoScreenWrap {
+  max-width: 824px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.halls__infoScreenItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 296px;
+  width: 100%;
+  height: 100%;
+
+  animation: fadeInFromNone 0.7s ease-out;
+
+  @keyframes fadeInFromNone {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+
+    1% {
+      display: block;
+      opacity: 0;
+    }
+
+    100% {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.halls__infoScreenItemRtl {
+  @extend .halls__infoScreenItem;
+
+  padding-left: 296px;
+  padding-right: unset;
+}
+
+.halls__number {
+  margin: 0;
+  padding: 0;
+  font-weight: 800;
+  font-size: 9px;
+  line-height: 100%;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 38px;
+}
+
+.halls__capacity {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.halls__capacityText {
+  font-size: 40px;
+}
+
+.halls__description {
+  font-size: 22px;
+  line-height: 160%;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width: 1200px) {
+  .halls::before {
+    display: none;
+  }
+  .halls__container {
+    flex-direction: column;
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    gap: 30px;
+  }
+  .halls__types {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 32px 0;
+
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .halls__item {
+    padding: 0;
+  }
+  .halls__item::before,
+  .halls__item::after {
+    display: none;
+  }
+  .halls__infoScreenItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .halls__infoScreen {
+    display: flex;
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .halls__capacityText {
+    font-size: 28px;
+  }
+  .halls__description {
+    font-size: 20px;
+    line-height: 1.2em;
+
+    color: rgba(255, 255, 255, 0.7);
+  }
 }
