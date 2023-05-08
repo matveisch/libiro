@@ -4,6 +4,10 @@
   align-items: center;
   gap: 15px;
 
+  @media (max-width: 1200px) {
+
+  }
+
   a {
     position: relative;
     text-decoration: none;

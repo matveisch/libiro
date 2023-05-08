@@ -14,7 +14,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 80px;
 
   .secLink {
     color: #fff;
@@ -24,13 +23,16 @@
     z-index: 2;
     line-height: 100%;
   }
-  ul {
+  .menuLinks {
     z-index: 2;
     position: relative;
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 16px;
+    margin-top: 48px;
+    margin-bottom: 64px;
+
     li {
       padding: 0;
 
@@ -71,7 +73,7 @@
 @media screen and (max-width: 575px) {
   .menuBg {
     padding: 80px 16px;
-    ul {
+    .menuLinks {
       gap: 10px;
       li {
         a {
