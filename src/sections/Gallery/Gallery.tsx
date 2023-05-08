@@ -151,19 +151,44 @@ export default function Gallery() {
           // onSwiper={(swiper) => console.log(swiper)}
         >
           <SwiperSlide>
-            <Image src={image1} alt="" />
+            <Image
+              src={image1}
+              loading={'eager'}
+              placeholder="blur"
+              alt="gallery image"
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <Image src={image2} alt="" />
+            <Image
+              src={image2}
+              loading={'eager'}
+              placeholder="blur"
+              alt="gallery image"
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <Image src={image3} alt="" />
+            <Image
+              src={image3}
+              loading={'eager'}
+              placeholder="blur"
+              alt="gallery image"
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <Image src={image4} alt="" />
+            <Image
+              src={image4}
+              loading={'eager'}
+              placeholder="blur"
+              alt="gallery image"
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <Image src={image5} alt="" />
+            <Image
+              src={image5}
+              loading={'eager'}
+              placeholder="blur"
+              alt="gallery image"
+            />
           </SwiperSlide>
         </Swiper>
       </div>
