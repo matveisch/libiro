@@ -1,12 +1,16 @@
 import React from 'react';
 import styles from './Halls.module.scss';
-
 import { hallsInfo } from './HallsInfo';
+import shortid from 'shortid';
 
 export default function Halls() {
   const [hover, setHover] = React.useState(0);
   const [active, setActive] = React.useState(0);
   const [test, setTest] = React.useState(2);
+
+  function getRandomKey() {
+    return shortid.generate();
+  }
 
   return (
     <section className={styles.halls}>
@@ -83,7 +87,7 @@ export default function Halls() {
         </div>
         <div className={`${styles.halls__infoScreen}`}>
           <div className={styles.halls__infoScreenWrap}>
-            <div className={styles.halls__infoScreenItem}>
+            <div className={styles.halls__infoScreenItem} key={getRandomKey()}>
               <h5 className={styles.halls__number}>
                 {hallsInfo[hover].number}
               </h5>
