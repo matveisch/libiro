@@ -10,7 +10,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import FuncBar from '@/components/FuncBar/FuncBar';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import { useTranslation } from 'next-i18next';
 
@@ -57,11 +56,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        {/*<Header />*/}
         <Events />
+        <Gallery />
         <Description />
         <Halls />
-        <Gallery />
         <Contact />
         <FuncBar />
         <Footer />

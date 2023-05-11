@@ -27,7 +27,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 120px;
+    align-items: start;
+    gap: 10vw;
     margin-top: 100px;
 
     .buttonWrapper {
@@ -39,6 +40,8 @@
 
       h2 {
         font-size: 20px;
+        text-align: center;
+        width: fit-content;
       }
     }
 
@@ -95,7 +98,7 @@
 }
 
 .events__description {
-  padding: 1em 8vw;
+  padding: 1em 6vw;
   font-size: 150%;
   color: white;
   text-align: center;

@@ -31,13 +31,13 @@ export default function Events() {
       link: '',
     },
     {
-      title: 'חייג/י אלינו',
-      img: phone,
+      title: 'לקוחות מספרים',
+      img: star,
       link: '',
     },
     {
-      title: 'לקוחות מספרים',
-      img: star,
+      title: 'חייג/י אלינו',
+      img: phone,
       link: '',
     },
   ];
