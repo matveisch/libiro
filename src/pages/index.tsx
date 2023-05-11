@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Footer from '@/components/Footer/Footer';
 import { useTranslation } from 'next-i18next';
+import Reviews from '@/sections/Reviews/Reviews';
 
 export default function Home() {
   const { locale } = useRouter();
@@ -58,6 +59,7 @@ export default function Home() {
       <main className={styles.main}>
         <Events />
         <Gallery />
+        <Reviews />
         <Description />
         <Halls />
         <Contact />
