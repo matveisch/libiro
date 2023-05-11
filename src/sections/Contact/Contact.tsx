@@ -3,6 +3,7 @@ import lines from '@public/lines.png';
 import { useState } from 'react';
 import ContactForm from '@/sections/Contact/ContactForm/ContactForm';
 import { useTranslation } from 'next-i18next';
+import ActionButton from '@/components/ActionButton/ActionButton';
 
 export default function Contact() {
   const [hasForm, setHasForm] = useState(false);
@@ -18,12 +19,11 @@ export default function Contact() {
           <h3>{t('askDetails')}</h3>
         </div>
       </div>
-      <div className={styles.buttonWrapper}>
-        <button type="button" className="link" onClick={() => setHasForm(true)}>
-          {t('plsContact')}
-        </button>
-        <div className={styles.square} />
-      </div>
+      <ActionButton
+        title={t('plsContact')}
+        onclick={() => setHasForm(true)}
+        style={{ marginTop: '-40px' }}
+      />
       {hasForm && <ContactForm setHasForm={setHasForm} />}
     </section>
   );

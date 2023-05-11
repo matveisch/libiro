@@ -1,6 +1,13 @@
 import styles from './Events.module.scss';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
+import modernLogo from '@public/logo.png';
+import phone from '@public/phone-call.png';
+import star from '@public/star.png';
+import whatsapp from '@public/whatsapp.png';
+import ActionButton from '@/components/ActionButton/ActionButton';
+
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },
   visible: (i: number) => {
@@ -17,8 +24,27 @@ const draw = {
 };
 export default function Events() {
   const { t } = useTranslation();
+  const buttons = [
+    {
+      title: 'וואטסאפ',
+      img: whatsapp,
+      link: '',
+    },
+    {
+      title: 'חייג/י אלינו',
+      img: phone,
+      link: '',
+    },
+    {
+      title: 'לקוחות מספרים',
+      img: star,
+      link: '',
+    },
+  ];
+
   return (
     <section className={styles.events}>
+      <Image src={modernLogo} alt={'logo'} className={styles.logo} />
       <div className={styles.events__container}>
         <div className={styles.events__buttonFrame}>
           <span>{t('events')}</span>
@@ -51,6 +77,22 @@ export default function Events() {
           </motion.svg>
         </div>
         <div className={styles.events__description}>{t('eventsDesc')}</div>
+        <div className={styles.buttons}>
+          {buttons.map((button) => (
+            <div className={styles.buttonWrapper} key={button.title}>
+              <a href={button.link}>
+                <Image src={button.img} alt={'icon'} />
+              </a>
+              <h2>{button.title}</h2>
+            </div>
+          ))}
+        </div>
+        <ActionButton
+          title={'להשארת פרטים לחץ/י כאן'}
+          onclick={() => {}}
+          style={{ margin: '20px 0' }}
+          buttonStyle={{ fontSize: '20px' }}
+        />
       </div>
     </section>
   );
