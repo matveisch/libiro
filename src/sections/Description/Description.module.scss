@@ -1,9 +1,9 @@
 //pc version
 
 .description {
-margin: 50px 0 auto;
 padding: 0 24px;
-max-width: 72vw;
+//max-width: 72vw;
+    margin: 50px 5vw 0 5vw;
 }
 
 .description__headerBlock{
@@ -47,12 +47,12 @@ max-width: 72vw;
     }
 }
 
-@media screen and (max-width: 1199px)
-{
-    .description{
-        max-width: 880px;
-    }
-}
+//@media screen and (max-width: 1199px)
+//{
+//    .description{
+//        max-width: 880px;
+//    }
+//}
 
 @media screen and (max-width: 767px)
 {
