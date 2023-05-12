@@ -28,10 +28,12 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^12.2.2",
     "react-loader-spinner": "^5.3.4",
+    "react-photo-album": "^2.2.2",
     "sass": "^1.62.1",
     "shortid": "^2.2.16",
     "swiper": "^9.2.4",
     "typescript": "5.0.4",
+    "yet-another-react-lightbox": "^3.6.0",
     "yup": "^1.1.1"
   },
   "devDependencies": {
