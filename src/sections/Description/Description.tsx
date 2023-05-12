@@ -1,5 +1,4 @@
 import styles from './Description.module.scss';
-import { useTranslation } from 'next-i18next';
 
 export default function Description() {
   return (
