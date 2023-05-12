@@ -60,9 +60,14 @@ export default function Home() {
         <Events />
         <Gallery />
         <Reviews />
+        <Contact
+          text={
+            'בואו להיות שותפים לחוויה ייחודית עם סיפוק אדיר וחיוך על הפנים!'
+          }
+        />
         <Description />
         <Images />
-        <Contact />
+        <Contact text={'גם אתם רוצים אירוע בלתי נשכח?'} />
         <FuncBar />
         <Footer />
       </main>

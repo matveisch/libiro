@@ -5,7 +5,7 @@ import ContactForm from '@/sections/Contact/ContactForm/ContactForm';
 import { useTranslation } from 'next-i18next';
 import ActionButton from '@/components/ActionButton/ActionButton';
 
-export default function Contact() {
+export default function Contact({ text }: { text?: string }) {
   const [hasForm, setHasForm] = useState(false);
   const { t } = useTranslation();
 
@@ -16,7 +16,8 @@ export default function Contact() {
         style={{ backgroundImage: `url(${lines.src})` }}
       >
         <div className={styles.frameBackground}>
-          <h3>{t('askDetails')}</h3>
+          <h3>צרו איתנו קשר</h3>
+          <h2>{text}</h2>
         </div>
       </div>
       <ActionButton

@@ -69,7 +69,7 @@ export default function ContactForm({
             {!isValid ||
               (isSubmitting && <GeneralError isSubmitting={isSubmitting} />)}
             <div className={styles.inputsWrapper}>
-              <Chooser setFieldValue={setFieldValue} />
+              {/*<Chooser setFieldValue={setFieldValue} />*/}
               <div className={styles.singleInput}>
                 <Field
                   name="name"
@@ -112,29 +112,29 @@ export default function ContactForm({
                   <ErrorMessage message={errors.phone} />
                 ) : null}
               </div>
-              <div className={styles.singleInput}>
-                <Field
-                  name="message"
-                  placeholder={t('enterMessage')}
-                  as="textarea"
-                  maxLength={180}
-                  onKeyUp={(e: ChangeEvent<HTMLTextAreaElement>) =>
-                    setCount(e.target.value.length)
-                  }
-                  style={
-                    errors.message && touched.message
-                      ? { borderColor: '#E04562' }
-                      : undefined
-                  }
-                />
-                {errors.message && touched.message ? (
-                  <ErrorMessage message={errors.message} />
-                ) : null}
-                <span className={styles.count}>{`${count}/180`}</span>
-              </div>
+              {/*<div className={styles.singleInput}>*/}
+              {/*  <Field*/}
+              {/*    name="message"*/}
+              {/*    placeholder={t('enterMessage')}*/}
+              {/*    as="textarea"*/}
+              {/*    maxLength={180}*/}
+              {/*    onKeyUp={(e: ChangeEvent<HTMLTextAreaElement>) =>*/}
+              {/*      setCount(e.target.value.length)*/}
+              {/*    }*/}
+              {/*    style={*/}
+              {/*      errors.message && touched.message*/}
+              {/*        ? { borderColor: '#E04562' }*/}
+              {/*        : undefined*/}
+              {/*    }*/}
+              {/*  />*/}
+              {/*  {errors.message && touched.message ? (*/}
+              {/*    <ErrorMessage message={errors.message} />*/}
+              {/*  ) : null}*/}
+              {/*  <span className={styles.count}>{`${count}/180`}</span>*/}
+              {/*</div>*/}
             </div>
             <button type="submit" className={styles.sendButton}>
-              {t('sendMessage')}
+              {'צור/י איתנו קשר, ונחזור אלייך במהירות!'}
             </button>
           </Form>
         </div>
