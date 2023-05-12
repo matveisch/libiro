@@ -2,7 +2,7 @@ import * as Yup from 'yup';
 import { Formik, Form, FormikHelpers, Field } from 'formik';
 import styles from './ContactForm.module.scss';
 import ErrorMessage from '@/sections/Contact/ErrorMessage/ErrorMessage';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'next-i18next';
 import GeneralError from '@/sections/Contact/GeneralError/GeneralError';
 

@@ -7,9 +7,6 @@ import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 
 export default function Footer() {
-  const { t } = useTranslation();
-  const { locale } = useRouter();
-
   // const links = [
   //   {
   //     title: t('restaurant'),
