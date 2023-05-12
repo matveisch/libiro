@@ -5,6 +5,9 @@
   position: relative;
 
   .logo {
+    //margin-top: 20px;
+    //margin-bottom: 20px;
+
     position: absolute;
     left: 50%;
     top: 20px;
@@ -29,7 +32,7 @@
     justify-content: center;
     align-items: flex-start;
     gap: 10vw;
-    margin-top: 100px;
+    margin-top: 80px;
 
     .buttonWrapper {
       display: flex;
@@ -91,17 +94,16 @@
   transform: matrix(1, 0, 0, 1, 0, 0);
 }
 
-.events__frameLeft {
-}
-
-.events__frameRight {
-}
-
 .events__description {
   padding: 1em 6vw;
   font-size: 150%;
   color: white;
   text-align: center;
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 1199px) {
@@ -117,7 +119,8 @@
 
   .events__buttonFrame {
     width: 100%;
-    font-size: 6.95vw;
+    //font-size: 6.95vw;
+    font-size: 1.9rem;
   }
 }
 // @media screen and (max-width: 767px) {
