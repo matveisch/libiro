@@ -1,10 +1,8 @@
 import styles from './Footer.module.scss';
 import Image from 'next/image';
 import logo from '@public/logo.png';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Autoplay, Pagination } from 'swiper';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 
@@ -12,33 +10,33 @@ export default function Footer() {
   const { t } = useTranslation();
   const { locale } = useRouter();
 
-  const links = [
-    {
-      title: t('restaurant'),
-      path: `https://libira.co.il/${locale}/restaurant/`,
-    },
-    { title: t('menu'), path: `https://libira.co.il/${locale}/menu/` },
-    {
-      title: t('eventsFooter'),
-      path: `https://libira.co.il/${locale}/events/`,
-    },
-    { title: t('brewery'), path: `https://libira.co.il/${locale}/brewery/` },
-    { title: t('beers'), path: `https://libira.co.il/${locale}/beers/` },
-    { title: t('contacts'), path: `https://libira.co.il/${locale}/contacts/` },
-  ];
+  // const links = [
+  //   {
+  //     title: t('restaurant'),
+  //     path: `https://libira.co.il/${locale}/restaurant/`,
+  //   },
+  //   { title: t('menu'), path: `https://libira.co.il/${locale}/menu/` },
+  //   {
+  //     title: t('eventsFooter'),
+  //     path: `https://libira.co.il/${locale}/events/`,
+  //   },
+  //   { title: t('brewery'), path: `https://libira.co.il/${locale}/brewery/` },
+  //   { title: t('beers'), path: `https://libira.co.il/${locale}/beers/` },
+  //   { title: t('contacts'), path: `https://libira.co.il/${locale}/contacts/` },
+  // ];
 
-  const offers = [
-    t('offerOne'),
-    t('offerTwo'),
-    t('offerThree'),
-    t('offerFour'),
-    t('offerFive'),
-    t('offerSix'),
-    t('offerSeven'),
-    t('offerEight'),
-    t('offerNine'),
-    t('offerTen'),
-  ];
+  // const offers = [
+  //   t('offerOne'),
+  //   t('offerTwo'),
+  //   t('offerThree'),
+  //   t('offerFour'),
+  //   t('offerFive'),
+  //   t('offerSix'),
+  //   t('offerSeven'),
+  //   t('offerEight'),
+  //   t('offerNine'),
+  //   t('offerTen'),
+  // ];
 
   return (
     <footer className={styles.footer}>

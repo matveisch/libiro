@@ -2,8 +2,7 @@ import * as Yup from 'yup';
 import { Formik, Form, FormikHelpers, Field } from 'formik';
 import styles from './ContactForm.module.scss';
 import ErrorMessage from '@/sections/Contact/ErrorMessage/ErrorMessage';
-import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
-import Chooser from '@/sections/Contact/Chooser/Chooser';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import GeneralError from '@/sections/Contact/GeneralError/GeneralError';
 
@@ -20,7 +19,6 @@ export default function ContactForm({
 }: {
   setHasForm: Dispatch<SetStateAction<boolean>>;
 }) {
-  const [count, setCount] = useState(0);
   const { t } = useTranslation();
 
   let validationShape = {
@@ -55,7 +53,7 @@ export default function ContactForm({
         setSubmitting(false);
       }}
     >
-      {({ errors, touched, setFieldValue, isValid, isSubmitting }) => (
+      {({ errors, touched, isValid, isSubmitting }) => (
         <div className={styles.contactForm}>
           <Form>
             <button
