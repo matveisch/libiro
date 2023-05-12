@@ -3,7 +3,6 @@ import styles from '@styles/Home.module.scss';
 import axios from 'axios';
 import Events from '@/sections/Events/Events';
 import Description from '@/sections/Description/Description';
-import Halls from '@/sections/Halls/Halls';
 import Gallery from '@/sections/Gallery/Gallery';
 import Contact from '@/sections/Contact/Contact';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';

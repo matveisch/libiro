@@ -2,8 +2,6 @@ import styles from './Description.module.scss';
 import { useTranslation } from 'next-i18next';
 
 export default function Description() {
-  const { t } = useTranslation();
-
   return (
     <section className={styles.description}>
       <div className={styles.description__headerBlock}>
