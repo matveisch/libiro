@@ -3,8 +3,6 @@ import Image from 'next/image';
 import logo from '@public/logo.png';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
 
 export default function Footer() {
   // const links = [
