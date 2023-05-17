@@ -4,6 +4,7 @@ import { useState } from 'react';
 import ContactForm from '@/sections/Contact/ContactForm/ContactForm';
 import { useTranslation } from 'next-i18next';
 import ActionButton from '@/components/ActionButton/ActionButton';
+import UpdatedForm from './UpdatedForm/UpdatedForm';
 
 export default function Contact({ text }: { text?: string }) {
   const [hasForm, setHasForm] = useState(false);
@@ -20,11 +21,12 @@ export default function Contact({ text }: { text?: string }) {
           <h2>{text}</h2>
         </div>
       </div>
-      <ActionButton
+      <UpdatedForm />
+      {/* <ActionButton
         title={t('plsContact')}
         onclick={() => setHasForm(true)}
         style={{ marginTop: '-40px' }}
-      />
+      /> */}
       {hasForm && <ContactForm setHasForm={setHasForm} />}
     </section>
   );

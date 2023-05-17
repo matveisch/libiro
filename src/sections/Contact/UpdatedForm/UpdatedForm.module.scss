@@ -1,0 +1,54 @@
+.updatedForm {
+  display: flex;
+  padding: 10px;
+  max-width: 1140px;
+
+  @media (max-width: 637px) {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+
+  .inputsWrapper {
+    display: flex;
+    gap: 10px;
+
+    @media (max-width: 637px) {
+      flex-direction: column;
+    }
+  }
+
+  .singleInput {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px 16px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 3px;
+
+    @media (max-width: 637px) {
+      flex-basis: 100%;
+    }
+  }
+
+  button {
+    background-color: #950000;
+    width: 100%;
+    color: #fff;
+    font-size: 20px;
+    padding: 0 24px;
+    height: 40px;
+    border-radius: 3px;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      color: #bcbcbc;
+    }
+
+    @media (max-width: 637px) {
+        font-size: 16px;
+    }
+  }
+}
