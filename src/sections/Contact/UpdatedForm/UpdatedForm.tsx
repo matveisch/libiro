@@ -6,14 +6,12 @@ import GeneralError from '@/sections/Contact/GeneralError/GeneralError';
 import styles from './UpdatedForm.module.scss';
 
 export interface Values {
-  subject: string;
   name: string;
   email: string;
   phone: string;
-  message: string;
 }
 
-export default function updatedForm() {
+export default function UpdatedForm() {
   const { t } = useTranslation();
 
   let validationShape = {
@@ -28,7 +26,6 @@ export default function updatedForm() {
         t('inputEmail') || 'This field is required. Please input a valid email.'
       ),
     phone: Yup.string(),
-    message: Yup.string(),
   };
 
   const contactSchema = Yup.object().shape(validationShape);
@@ -36,11 +33,9 @@ export default function updatedForm() {
   return (
     <Formik
       initialValues={{
-        subject: '',
         name: '',
         email: '',
         phone: '',
-        message: '',
       }}
       validationSchema={contactSchema}
       onSubmit={(values: Values, { setSubmitting }: FormikHelpers<Values>) => {
