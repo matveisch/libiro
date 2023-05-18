@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 import { Formik, Form, FormikHelpers, Field } from 'formik';
 import { useTranslation } from 'next-i18next';
-// import ErrorMessage from '@/sections/Contact/ErrorMessage/ErrorMessage';
+import ErrorMessage from '@/sections/Contact/ErrorMessage/ErrorMessage';
 import GeneralError from '@/sections/Contact/GeneralError/GeneralError';
 import styles from './UpdatedForm.module.scss';
 
@@ -25,7 +25,10 @@ export default function UpdatedForm() {
       .required(
         t('inputEmail') || 'This field is required. Please input a valid email.'
       ),
-    phone: Yup.string(),
+    phone: Yup.string()
+      .required(
+        t('inputPhone') || 'This field is required. Please input a valid phone number.'
+      )
   };
 
   const contactSchema = Yup.object().shape(validationShape);
@@ -59,9 +62,9 @@ export default function UpdatedForm() {
                       : undefined
                   }
                 />
-                {/* {errors.name && touched.name ? (
+                {errors.name && touched.name ? (
                   <ErrorMessage message={errors.name} />
-                ) : null} */}
+                ) : null}
               </div>
               <div className={styles.singleInput}>
                 <Field
@@ -73,9 +76,9 @@ export default function UpdatedForm() {
                       : undefined
                   }
                 />
-                {/* {errors.email && touched.name ? (
+                {errors.email && touched.name ? (
                   <ErrorMessage message={errors.email} />
-                ) : null} */}
+                ) : null}
               </div>
               <div className={styles.singleInput}>
                 <Field
@@ -87,9 +90,9 @@ export default function UpdatedForm() {
                       : undefined
                   }
                 />
-                {/* {errors.phone && touched.name ? (
+                {errors.phone && touched.name ? (
                   <ErrorMessage message={errors.phone} />
-                ) : null} */}
+                ) : null}
               </div>
             </div>
             <button type="submit" className={styles.sendButton}>
