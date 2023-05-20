@@ -12,22 +12,23 @@ export default function Contact({ text }: { text?: string }) {
 
   return (
     <section className={styles.contact}>
-      <div
-        className={styles.frame}
-        style={{ backgroundImage: `url(${lines.src})` }}
-      >
-        <div className={styles.frameBackground}>
-          <h3>צרו איתנו קשר</h3>
-          <h2>{text}</h2>
+      <div className={styles.overlay} />
+        <div
+          className={styles.frame}
+          // style={{ backgroundImage: `url(${lines.src})` }}
+        >
+          <div className={styles.frameBackground}>
+            <h3>צרו איתנו קשר</h3>
+            <h2>{text}</h2>
+          </div>
+          <UpdatedForm />
         </div>
-      </div>
-      <UpdatedForm />
-      {/* <ActionButton
+        {/* <ActionButton
         title={t('plsContact')}
         onclick={() => setHasForm(true)}
         style={{ marginTop: '-40px' }}
       /> */}
-      {hasForm && <ContactForm setHasForm={setHasForm} />}
+        {hasForm && <ContactForm setHasForm={setHasForm} />}
     </section>
   );
 }
