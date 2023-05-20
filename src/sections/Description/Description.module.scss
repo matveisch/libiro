@@ -1,16 +1,15 @@
 .description {
-    margin: 50px 5vw 0 5vw;
+    margin: 30px 5vw 0 5vw;
 
     @media (max-width: 768px) {
-        margin: 50px 0 0 0;
+        margin: 30px 0 0 0;
     }
 }
 
 .description__headerBlock{
     padding: 0 24px;
-    margin-bottom: 72px;
+    margin-bottom: 24px;
     text-align: center;
-    // max-height: 406px;
 }
 
 .description__header{

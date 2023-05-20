@@ -19,6 +19,7 @@
 
   "inputName": "This field is required. Please input your name.",
   "inputEmail": "This field is required. Please input a valid email.",
+  "inputPhone": "This field is required. Please input a valid phone number.",
   "orCall": "Or pls call at 04-3740251",
   "yourName": "Your name",
   "emailAddress": "Email Address",
