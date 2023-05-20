@@ -2,12 +2,15 @@
   display: flex;
   padding: 10px;
   max-width: 1140px;
+  width: 100%;
 
   @media (max-width: 637px) {
     flex-direction: column;
+  }
+
+  form {
     width: 100%;
   }
-  
 
   .inputsWrapper {
     display: flex;
@@ -26,6 +29,7 @@
     background-color: #fff;
     margin-bottom: 10px;
     border-radius: 3px;
+    width: 100%;
 
     @media (max-width: 637px) {
       flex-basis: 100%;
