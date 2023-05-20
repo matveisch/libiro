@@ -6,7 +6,6 @@ import modernLogo from '@public/logo.png';
 import phone from '@public/phone-call.png';
 import star from '@public/star.png';
 import whatsapp from '@public/whatsapp.png';
-import ActionButton from '@/components/ActionButton/ActionButton';
 import firstPhoto from '@public/ליבריה.gif';
 import secondPhoto from '@public/ליבריה (1).gif';
 import thirdPhoto from '@public/ליבריה (2).gif';
