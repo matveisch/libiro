@@ -7,6 +7,12 @@ import phone from '@public/phone-call.png';
 import star from '@public/star.png';
 import whatsapp from '@public/whatsapp.png';
 import ActionButton from '@/components/ActionButton/ActionButton';
+import backPhoto from '@public/Фон2.jpg';
+import firstPhoto from '@public/ליבריה.gif';
+import secondPhoto from '@public/ליבריה (1).gif';
+import thirdPhoto from '@public/ליבריה (2).gif';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },
@@ -44,6 +50,19 @@ export default function Events() {
 
   return (
     <section className={styles.events}>
+      <div className={styles.backPhoto}>
+        <Swiper slidesPerView={1} loop={true} className={styles.mySwiper}>
+          <SwiperSlide className={styles.mySwiperSlide}>
+            <Image src={firstPhoto} alt="gallery image" />
+          </SwiperSlide>
+          <SwiperSlide className={styles.mySwiperSlide}>
+            <Image src={secondPhoto} alt="gallery image" />
+          </SwiperSlide>
+          <SwiperSlide className={styles.mySwiperSlide}>
+            <Image src={thirdPhoto} alt="gallery image" />
+          </SwiperSlide>
+        </Swiper>
+      </div>
       <Image src={modernLogo} alt={'logo'} className={styles.logo} />
       <div className={styles.events__container}>
         <div className={styles.events__buttonFrame}>
