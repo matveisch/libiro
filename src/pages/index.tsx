@@ -8,15 +8,21 @@ import Contact from '@/sections/Contact/Contact';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import FuncBar from '@/components/FuncBar/FuncBar';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Footer from '@/components/Footer/Footer';
 import { useTranslation } from 'next-i18next';
 import Reviews from '@/sections/Reviews/Reviews';
 import Images from '@/sections/Images/Images';
+import ActionButton from '@/components/ActionButton/ActionButton';
 
 export default function Home() {
   const { locale } = useRouter();
   const { t } = useTranslation();
+  const formRef = useRef<HTMLDivElement>(null);
+
+  function handleClick() {
+    formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
   useEffect(() => {
     if (locale === 'he') {
@@ -58,13 +64,25 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Events />
+        <div
+          style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+        >
+          <ActionButton
+            title={'להשארת פרטים לחץ/י כאן'}
+            onclick={handleClick}
+            style={{ margin: '20px 0' }}
+            buttonStyle={{ fontSize: '20px' }}
+          />
+        </div>
         <Gallery />
         <Reviews />
-        <Contact
-          text={
-            'בואו להיות שותפים לחוויה ייחודית עם סיפוק אדיר וחיוך על הפנים!'
-          }
-        />
+        <div ref={formRef}>
+          <Contact
+            text={
+              'בואו להיות שותפים לחוויה ייחודית עם סיפוק אדיר וחיוך על הפנים!'
+            }
+          />
+        </div>
         <Description />
         <Images />
         <Contact text={'גם אתם רוצים אירוע בלתי נשכח?'} />

@@ -105,12 +105,6 @@ export default function Events() {
             </div>
           ))}
         </div>
-        <ActionButton
-          title={'להשארת פרטים לחץ/י כאן'}
-          onclick={() => {}}
-          style={{ margin: '20px 0' }}
-          buttonStyle={{ fontSize: '20px' }}
-        />
       </div>
     </section>
   );
