@@ -6,13 +6,17 @@
   .logo {
     position: absolute;
     left: 50%;
-    top: 20px;
+    top: 0px;
+    width: auto;
+    height: 150px;
     transform: translate(-50%, 0);
     z-index: 1;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(288deg)
+      brightness(108%) contrast(106%);
   }
 
   .backPhoto {
-    height: 50vh;
+    height: 80vh;
 
     @media (max-width: 768px) {
       height: 30vh;
@@ -35,6 +39,7 @@
 }
 
 .events__container {
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,12 +75,20 @@
       justify-content: center;
       align-items: center;
       padding: 15px;
-
+      transition: 0.3s;
+      &:hover {
+        border: 3px solid #b32821;
+        img {
+          filter: invert(19%) sepia(52%) saturate(2756%) hue-rotate(341deg)
+            brightness(106%) contrast(101%);
+        }
+      }
       img {
         width: 30px;
         height: 30px;
 
-        filter: invert(99%) sepia(4%) saturate(2680%) hue-rotate(168deg) brightness(115%) contrast(100%);
+        filter: invert(99%) sepia(4%) saturate(2680%) hue-rotate(168deg)
+          brightness(115%) contrast(100%);
       }
     }
   }
@@ -114,6 +127,7 @@
   font-size: 150%;
   color: white;
   text-align: center;
+  font-family: 'Rubik', sans-serif;
 
   @media (max-width: 768px) {
     font-size: 16px;
