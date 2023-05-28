@@ -6,7 +6,6 @@ import Description from '@/sections/Description/Description';
 import Gallery from '@/sections/Gallery/Gallery';
 import Contact from '@/sections/Contact/Contact';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import FuncBar from '@/components/FuncBar/FuncBar';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
 import Footer from '@/components/Footer/Footer';
