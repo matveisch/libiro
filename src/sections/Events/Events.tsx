@@ -2,7 +2,7 @@ import styles from './Events.module.scss';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
-import modernLogo from '@public/logo.png';
+import modernLogo from '@public/libira logo transparent.png';
 import phone from '@public/phone-call.png';
 import star from '@public/star.png';
 import whatsapp from '@public/whatsapp.png';
@@ -93,7 +93,10 @@ export default function Events() {
             ></motion.path>
           </motion.svg>
         </div>
-        <div className={styles.events__description}>{t('eventsDesc')}</div>
+        <div className={styles.events__description}>
+          {t('eventsDesc') + ' '}
+          <span style={{ fontWeight: 700 }}>{t('eventsDescBold')}</span>
+        </div>
         <div className={styles.buttons}>
           {buttons.map((button) => (
             <div className={styles.buttonWrapper} key={button.title}>
