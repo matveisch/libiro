@@ -86,7 +86,7 @@ export default function Home() {
         <Description />
         <Images />
         <Contact text={'גם אתם רוצים אירוע בלתי נשכח?'} />
-        <FuncBar />
+        {/*<FuncBar />*/}
         <Footer />
       </main>
     </>
