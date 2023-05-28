@@ -3,30 +3,31 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType, Navigation } from 'swiper';
+import { useRouter } from 'next/router';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import styles from './Gallery.module.scss';
 import radish from '@public/radish.png';
-import image1 from '@public/vip-table-880_1000.jpg';
 import image2 from '@public/Event-gallery-1.jpg';
-import image3 from '@public/Beer-bar-in-private-hall.jpg';
-import image4 from '@public/Candelabra-in-the-Private-room.jpg';
+import steak from '@public/gallerypicsall/1220667.jpg';
+import pavlovaCake from '@public/gallerypicsall/Pavlova cake.png';
+import vipTable from '@public/vip-table-880_1000.jpg';
 import image5 from '@public/Private-Hall-1.jpg';
-
 import bgImage1 from '@public/fither-img3.jpg';
 import bgImage2 from '@public/events-img2-mobile.jpg';
 import bgImage3 from '@public/fither-img5.jpg';
 import bgImage4 from '@public/fither-img4.jpg';
 import bgImage5 from '@public/rest-screen-img4.jpg';
-import { useRouter } from 'next/router';
 
 export default function Gallery() {
-  const swiperRef = useRef<SwiperType>();
   const [rotateY, setRotateY] = useState(0);
-  const bgImagesArr = [bgImage1, bgImage2, bgImage3, bgImage4, bgImage5];
+  const [imageLoad, setImageLoad] = useState<boolean>(false);
   const [screenWidth, setScreenWidth] = useState(0);
   const { locale } = useRouter();
-  const [imageLoad, setImageLoad] = useState<boolean>(false);
+  const swiperRef = useRef<SwiperType>();
+  const bgImagesArr = [bgImage1, bgImage2, bgImage3, bgImage4, bgImage5];
+  const swiperImages = [image2, steak, pavlovaCake, vipTable, image5];
+
   useEffect(() => {
     function setWidth() {
       setScreenWidth(window.innerWidth);
@@ -78,8 +79,6 @@ export default function Gallery() {
                 },
                 rotateY: {
                   duration: 0.3,
-                  // repeatType: 'reverse',
-                  // repeat: 1,
                 },
               }}
               key={index}
@@ -152,58 +151,16 @@ export default function Gallery() {
               clearTimeout;
             }, 300);
           }}
-          // onSwiper={(swiper) => console.log(swiper)}
         >
-          <SwiperSlide>
-            <Image
-              src={image1}
-              loading={imageLoad ? 'eager' : 'lazy'}
-              alt="gallery image"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src={image2}
-              loading={imageLoad ? 'eager' : 'lazy'}
-              alt="gallery image"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src={image3}
-              loading={imageLoad ? 'eager' : 'lazy'}
-              alt="gallery image"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src={image4}
-              loading={imageLoad ? 'eager' : 'lazy'}
-              alt="gallery image"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src={image5}
-              loading={imageLoad ? 'eager' : 'lazy'}
-              alt="gallery image"
-            />
-          </SwiperSlide>
-          {/* <SwiperSlide>
-            <Image src={image1} loading={'eager'} alt="gallery image" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={image2} loading={'eager'} alt="gallery image" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={image3} loading={'eager'} alt="gallery image" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={image4} loading={'eager'} alt="gallery image" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={image5} loading={'eager'} alt="gallery image" />
-          </SwiperSlide> */}
+          {swiperImages.map((image, index) => (
+            <SwiperSlide key={index}>
+              <Image
+                src={image}
+                loading={imageLoad ? 'eager' : 'lazy'}
+                alt="gallery image"
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </motion.section>
