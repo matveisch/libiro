@@ -1,16 +1,16 @@
 import styles from './Footer.module.scss';
 import Image from 'next/image';
 import logo from '@public/logo.png';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
-import { SwiperSlide, Swiper } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper';
+import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 export default function Footer() {
-  const { locale } = useRouter();
   const { t } = useTranslation();
+  const { locale } = useRouter();
 
   const links = [
     {
