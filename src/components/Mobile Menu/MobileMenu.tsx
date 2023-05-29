@@ -2,7 +2,6 @@ import styles from './MobileMenu.module.scss';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-import Langs from '@/components/Langs/Langs';
 import Links from '@/components/Links/Links';
 
 interface Props {

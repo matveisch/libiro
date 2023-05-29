@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import styles from './Header.module.scss';
-import Image from 'next/image';
-import logo from '@public/logo.png';
 import MobileMenu from '../Mobile Menu/MobileMenu';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
