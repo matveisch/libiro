@@ -32,15 +32,12 @@ import _Rosh_aShana_hor from '../public/gallerypicsall/Rosh_aShana_hor.jpg';
 import _Yana_burger from '../public/gallerypicsall/Yana burger.jpg';
 import __DSC0013 from '../public/gallerypicsall/_DSC0013.jpg';
 import __DSC0019 from '../public/gallerypicsall/_DSC0019.jpg';
-import __DSC0075 from '../public/gallerypicsall/_DSC0075.jpg';
 import _beer_05 from '../public/gallerypicsall/beer_05.png';
 import _ig_libira_0001d_post_01a from '../public/gallerypicsall/ig_libira_0001d_post_01a.png';
 import _חציל from '../public/gallerypicsall/חציל.jpg';
 import _כנפיים from '../public/gallerypicsall/כנפיים.jpg';
 import _כרובית from '../public/gallerypicsall/כרובית.jpg';
 import _מחבת_פרות_ים from '../public/gallerypicsall/מחבת פרות ים.jpg';
-import _נוף_ליבירה_עם_לוגו_מימין_קטן from '../public/gallerypicsall/נוף ליבירה עם לוגו מימין קטן.jpg';
-import _נוף_ליבירה_עם_לוגו_משמאל from '../public/gallerypicsall/נוף ליבירה עם לוגו משמאל.jpg';
 import _סלט_ירוק from '../public/gallerypicsall/סלט ירוק.jpg';
 import _פילה_בורי from '../public/gallerypicsall/פילה בורי.jpg';
 import _קדאיף from '../public/gallerypicsall/קדאיף.jpg';
@@ -133,7 +130,6 @@ const data = [
   },
   { img: __DSC0013, name: '_DSC0013', folder: '../public/gallerypicsall' },
   { img: __DSC0019, name: '_DSC0019', folder: '../public/gallerypicsall' },
-  { img: __DSC0075, name: '_DSC0075', folder: '../public/gallerypicsall' },
   { img: _beer_05, name: 'beer_05', folder: '../public/gallerypicsall' },
   {
     img: _ig_libira_0001d_post_01a,
@@ -148,16 +144,11 @@ const data = [
     name: 'מחבת פרות ים',
     folder: '../public/gallerypicsall',
   },
-  {
-    img: _נוף_ליבירה_עם_לוגו_מימין_קטן,
-    name: 'נוף ליבירה עם לוגו מימין קטן',
-    folder: '../public/gallerypicsall',
-  },
-  {
-    img: _נוף_ליבירה_עם_לוגו_משמאל,
-    name: 'נוף ליבירה עם לוגו משמאל',
-    folder: '../public/gallerypicsall',
-  },
+  // {
+  //   img: _נוף_ליבירה_עם_לוגו_מימין_קטן,
+  //   name: 'נוף ליבירה עם לוגו מימין קטן',
+  //   folder: '../public/gallerypicsall',
+  // },
   { img: _סלט_ירוק, name: 'סלט ירוק', folder: '../public/gallerypicsall' },
   { img: _פילה_בורי, name: 'פילה בורי', folder: '../public/gallerypicsall' },
   { img: _קדאיף, name: 'קדאיף', folder: '../public/gallerypicsall' },
