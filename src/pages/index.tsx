@@ -13,6 +13,7 @@ import { useTranslation } from 'next-i18next';
 import Reviews from '@/sections/Reviews/Reviews';
 import Images from '@/sections/Images/Images';
 import ActionButton from '@/components/ActionButton/ActionButton';
+import Header from '@/components/Header/Header';
 
 export default function Home() {
   const { locale } = useRouter();
@@ -62,6 +63,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        <Header />
         <Events />
         <div
           style={{ width: '100%', display: 'flex', justifyContent: 'center' }}

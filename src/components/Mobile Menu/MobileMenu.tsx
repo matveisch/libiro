@@ -22,7 +22,7 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
       className={styles.menuBg}
       onClick={() => setIsOpen(false)}
     >
-      <Langs />
+      {/*<Langs />*/}
       <ul className={styles.menuLinks}>
         <li>
           <a

@@ -67,7 +67,7 @@ export default function Header() {
           </div>
         </div>
         <div className={styles.headerCenter}>
-          <Image src={logo} alt="logo" />
+          {/*<Image src={logo} alt="logo" />*/}
         </div>
         <div className={styles.headerRight}>
           <div className={styles.innerLeft}>

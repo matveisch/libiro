@@ -33,8 +33,14 @@
     align-items: center;
   }
   .headerCenter {
-    padding: 0 80px;
+    //padding: 0 80px;
+    width: 150px;
     flex-grow: 0;
+
+    @media (max-width: 1200px) {
+      padding: 0 80px;
+      width: unset;
+    }
   }
 
   .innerWrapper {
